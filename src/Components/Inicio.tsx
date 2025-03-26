@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Inicio.css";
 import "./Nosotros.css";
 import "./Industrias.css";
+import "./IndustriasDos.css";
+import "./IndustriasTres.css";
 import "./Especialidades.css";
 import "./Proceso.css";
 import "./Novedades.css";
@@ -13,6 +15,8 @@ import "./Datos.css";
 import "./Footer.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // Importar las imágenes
 
@@ -27,6 +31,7 @@ import novedadesImage3 from "../Media/Image/novedades3.jpg";
 
 // Footer
 import FooterLogo from "../Media/Image/T-Control.png"; // Importa la imagen
+import IndustriasDos from "./IndustriasDos";
 
 const Inicio: React.FC = () => {
   // Sección de card para Industrias
@@ -85,6 +90,89 @@ const Inicio: React.FC = () => {
       setTransitionEnabled(true);
     }
   }, [currentIndex, cards.length, duplicatedCards.length]);
+  /// IndustriasDos
+  const cardsData = [
+    {
+      title: "Eléctrica",
+      text: " Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad., Infraestructura energética y distribución eficiente..",
+      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+    },
+    {
+      title: "Redes y Telecomunicaciones",
+      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Soluciones en conectividad y comunicaciones.",
+      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+    },
+    {
+      title: "Construcción",
+      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Ingeniería y sistemas electromecánicos para proyectos industriales.",
+      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+    },
+    {
+      title: "Agroindustria",
+      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Automatización y mantenimiento de plantas de procesamiento.",
+      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+    },
+    {
+      title: "Automatización y control Industrial",
+      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Optimización de procesos con tecnología avanzada.",
+      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+    },
+    {
+      title: "Seguridad electrónica y video Vigilancia",
+      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Protección y monitoreo inteligente.",
+      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+    },
+  ];
+
+  // SLides tres industrias
+
+  const slides = [
+    {
+      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+      title: "Eléctrica",
+      text: "Infraestructura energética y distribución eficiente.",
+    },
+    {
+      img: "https://i.pinimg.com/736x/77/66/e9/7766e998b2f9660847dc755e485e90df.jpg",
+      title: "Redes y Telecomunicaciones",
+      text: "Soluciones en conectividad y comunicaciones.",
+    },
+    {
+      img: "https://i.pinimg.com/736x/f1/24/55/f124556a1b6281e7c119730fd5c7cb56.jpg",
+      title: "Construcción",
+      text: "Ingeniería y sistemas electromecánicos para proyectos industriales.",
+    },
+    {
+      img: "https://i.pinimg.com/736x/e4/4c/3f/e44c3f9b18cc0125dd27170d93519983.jpg",
+      title: "Agroindustria",
+      text: "Automatización y mantenimiento de plantas de procesamiento.",
+    },
+    {
+      img: "https://i.pinimg.com/736x/26/9c/f1/269cf1b98a1b7ba30c003a5818c81c8e.jpg",
+      title: "Automatización y Control Industrial",
+      text: "Optimización de procesos con tecnología avanzada.",
+    },
+    {
+      img: "https://i.pinimg.com/736x/cd/df/e7/cddfe74d5a278fdc8c21e8ba9951577a.jpg",
+      title: "Seguridad Electrónica y Videovigilancia",
+      text: "Protección y monitoreo inteligente.",
+    },
+    {
+      img: "https://i.pinimg.com/736x/b0/63/ee/b063ee8aae772be8d87e73ded5b97978.jpg",
+      title: "Tecnológica",
+      text: "Innovación y desarrollo tecnológico.",
+    },
+    {
+      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+      title: "Industrial",
+      text: "Soluciones industriales avanzadas.",
+    },
+    {
+      img: "https://i.pinimg.com/736x/44/97/f6/4497f66210a1ff6821bfc8347cd744d2.jpg",
+      title: "Automotriz",
+      text: "Tecnología y eficiencia en la industria automotriz.",
+    },
+  ];
 
   // Imagenes de Especialidades
   const specialties = [
@@ -144,19 +232,15 @@ const Inicio: React.FC = () => {
 
   // Datos
 
-  // State para almacenar el mensaje y el correo del usuario
+  const [showOverlay, setShowOverlay] = useState(false);
   const [mensaje, setMensaje] = useState("");
   const [correo, setCorreo] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // Construimos el mailto con los datos ingresados
     const mailtoLink = `mailto:omarsm.1928@gmail.com?subject=Consulta%20desde%20la%20web&body=Mensaje:%20${encodeURIComponent(
       mensaje
-    )}%0ACorreo%20del%20remitente:%20${encodeURIComponent(correo)}`;
-
-    // Abrimos el cliente de correo
+    )}%0ACorreo:%20${encodeURIComponent(correo)}`;
     window.location.href = mailtoLink;
   };
 
@@ -340,6 +424,143 @@ const Inicio: React.FC = () => {
           </button>
         </div>
       </section>
+
+      {/** IndustriasDos--------------------------------------------------------------------------------------------------------------------- */}
+      <section className="industrias-section">
+        {/* Encabezado: título y subtítulo centrados */}
+        <div className="industrias-header text-center">
+          <h2 className="industrias-title">Industrias</h2>
+          <p className="industrias-subtitle">
+            Nos enorgullece ofrecer soluciones de vanguardia que transforman la
+            manera en que las empresas operan y optimizan sus procesos,
+            impulsando la eficiencia, la productividad y la seguridad.
+          </p>
+        </div>
+        {/* Contenedor de cards */}
+        <div className="container">
+          <div className="row industrias-cards-container">
+            {cardsData.map((card, index) => (
+              // Usamos las clases de Bootstrap para la responsividad:
+              // col-lg-4: 3 columnas en pantallas grandes,
+              // col-md-6: 2 columnas en pantallas medianas,
+              // col-sm-12: 1 columna en móviles.
+              <div
+                key={index}
+                className="col-lg-4 col-md-6 col-sm-12 mb-4 gatBotom"
+              >
+                <div className="card industrias-custom-card h-100">
+                  {/* Imagen de la card */}
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className="industrias-card-img-top"
+                  />
+                  {/* Cuerpo de la card con título y descripción */}
+                  <div className="card-body industrias-card-body">
+                    <h5 className="industrias-card-title">{card.title}</h5>
+                    <p className="industrias-card-text">{card.text}</p>
+                  </div>
+                  {/* Footer de la card: se muestran dos versiones según el tamaño de pantalla */}
+                  <span className="industrias-footer-text desktop">
+                    T-Control
+                  </span>
+                  <span className="industrias-footer-text mobile">
+                    T-Control
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/** IndustriasTres------------------------------------------------------------------------------------------------------------------ */}
+
+      <section className="industria3-section">
+        {/* Título de la sección */}
+        <h2 className="industria3-title">Industrias</h2>
+        {/* Subtítulo de la sección */}
+        <p className="industria3-subtitle">
+          Nos enorgullece ofrecer soluciones de vanguardia que transforman la
+          manera en que las empresas operan y optimizan sus procesos, impulsando
+          la eficiencia, la productividad y la seguridad.
+        </p>
+
+        {/* Carrusel de Bootstrap con auto-slide cada 3 segundos */}
+        <div
+          id="carouselIndustria3Captions"
+          className="carousel slide industria3-carousel"
+          data-bs-ride="carousel"
+          data-bs-interval="3000"
+        >
+          {/* Indicadores */}
+          <div className="carousel-indicators industria3-carousel-indicators">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                data-bs-target="#carouselIndustria3Captions"
+                data-bs-slide-to={index}
+                className={index === 0 ? "active" : ""}
+                aria-current={index === 0 ? "true" : undefined}
+                aria-label={`Slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+
+          {/* Slides */}
+          <div className="carousel-inner industria3-carousel-inner">
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className={`carousel-item industria3-carousel-item ${
+                  index === 0 ? "active" : ""
+                }`}
+              >
+                <img
+                  src={slide.img}
+                  className="d-block w-100 industria3-slide-image"
+                  alt={`Slide ${index + 1}`}
+                />
+                {/* Overlay para oscurecer la imagen y resaltar el texto */}
+                <div className="industria3-slide-overlay"></div>
+                <div className="carousel-caption d-none d-md-block industria3-carousel-caption">
+                  <h5>{slide.title}</h5>
+                  <p>{slide.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Botón de retroceso */}
+          <button
+            className="carousel-control-prev industria3-carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselIndustria3Captions"
+            data-bs-slide="prev"
+          >
+            <span
+              className="industria3-carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          {/* Botón de avance */}
+          <button
+            className="carousel-control-next industria3-carousel-control-next"
+            type="button"
+            data-bs-target="#carouselIndustria3Captions"
+            data-bs-slide="next"
+          >
+            <span
+              className="industria3-carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
       {/* Sección Especialidades ----------------------------------------------------------------------------------------------------------------------*/}
       <section className="container my-5" id="Especialidades">
         <h2 className="text-center mb-4 tituloEspecialidades">
@@ -567,6 +788,112 @@ const Inicio: React.FC = () => {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="ubicanos-section py-5">
+        <div className="container">
+          <h2 className="text-center mb-4 tituloUbicanos">Ubícanos</h2>
+          <br />
+          <div className="ubicanos-map-container">
+            <iframe
+              title="Ubicación"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1592.103873250239!2d-80.62735437049088!3d-5.197512897716894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a107ddd0efae7%3A0xaeb976088d0ea599!2sPlaza%20de%20Armas%20de%20Piura!5e0!3m2!1ses!2spe!4v1741975395056!5m2!1ses!2spe"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            ></iframe>
+            <div className="ubicanos-contact-info">
+              <h3 className="mb-3 Dub">
+                Estamos en contacto
+                <button
+                  className="btn message-btn"
+                  onClick={() => setShowOverlay(true)}
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="#222"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 3h20v14H5l-3 3V3z"
+                      stroke="#222"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h3>
+              <p className="mb-1 Tub">T-Control- Perú</p>
+              <p className="mb-1 Tub">987 654 321</p>
+              <div className="ubicanos-social-icons">
+                <a href="#!" aria-label="Twitter">
+                  <i className="bi bi-twitter"></i>
+                </a>
+                <a href="#!" aria-label="Facebook">
+                  <i className="bi bi-facebook"></i>
+                </a>
+                <a href="#!" aria-label="Instagram">
+                  <i className="bi bi-instagram"></i>
+                </a>
+                <a href="#!" aria-label="LinkedIn">
+                  <i className="bi bi-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {showOverlay && (
+          <div className="overlay">
+            <div className="overlay-content">
+              <h2 className="datos-title mb-4">Déjanos un mensaje</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="mensaje" className="form-label">
+                    Mensaje
+                  </label>
+                  <textarea
+                    id="mensaje"
+                    className="form-control datos-textarea"
+                    rows={5}
+                    placeholder="Escribe tu mensaje aquí..."
+                    value={mensaje}
+                    onChange={(e) => setMensaje(e.target.value)}
+                  ></textarea>
+                </div>
+                <div className="form-group mt-3">
+                  <label htmlFor="correo" className="form-label">
+                    Correo
+                  </label>
+                  <input
+                    type="email"
+                    id="correo"
+                    className="form-control datos-email-input"
+                    placeholder="name@mail.com"
+                    value={correo}
+                    onChange={(e) => setCorreo(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="btn-group mt-3">
+                  <button type="submit" className="btn datos-btn">
+                    Enviar
+                  </button>
+                  <button
+                    className="btn btn-secondary back-btn"
+                    onClick={() => setShowOverlay(false)}
+                  >
+                    Atrás
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
       </section>
       {/* Sección Contactanos ----------------------------------------------------------------------------------------------------------------------*/}
       <section className="container my-5 Contactanos" id="Contactanos">

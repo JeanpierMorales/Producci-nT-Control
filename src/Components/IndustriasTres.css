@@ -1,0 +1,115 @@
+/* 
+  Estilos principales para la sección de IndustriaTres.
+  Se utilizan prefijos 'industria3-' para evitar conflictos con otras secciones.
+*/
+
+/* Contenedor general de la sección */
+.industria3-section {
+  margin: 0rem 0 6rem;
+}
+
+/* Título principal */
+.industria3-title {
+  color: #222;
+  font-size: clamp(21px, 4vw, 40px);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* Subtítulo */
+.industria3-subtitle {
+  font-size: clamp(9px, 2vw, 21px);
+  color: #343434;
+  font-weight: 500;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* Carrusel: se define altura, bordes y bordes redondeados */
+.industria3-carousel {
+  margin: 0 auto;
+  max-width: 900px;
+  height: 500px; /* Altura fija para el carrusel */
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+/* Cada item del carrusel debe ocupar la altura definida */
+.industria3-carousel-item {
+  height: 500px;
+  position: relative;
+}
+
+/* Imagen: se adapta al contenedor manteniendo el cover */
+.industria3-slide-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Overlay para oscurecer la imagen (ajusta la opacidad según necesites) */
+.industria3-slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Caption: se coloca por encima del overlay con los textos centrados */
+.industria3-carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+}
+
+/* H5 y P en el caption: se mantienen los estilos por defecto */
+.industria3-carousel-caption h5 {
+  margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.industria3-carousel-caption p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* Botones de navegación personalizados:
+       Se eliminan los iconos por defecto y se crean flechas con borde negro y mayor grosor */
+.industria3-carousel-control-prev-icon,
+.industria3-carousel-control-next-icon {
+  background-image: none; /* Elimina el icono de Bootstrap */
+  display: inline-block;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 4px 4px 0;
+  padding: 10px;
+}
+
+/* Flecha para el botón de retroceso */
+.industria3-carousel-control-prev-icon {
+  transform: rotate(135deg);
+}
+
+/* Flecha para el botón de avance */
+.industria3-carousel-control-next-icon {
+  transform: rotate(-45deg);
+}
+
+/* En pantallas menores a 600px, se oculta el párrafo para mostrar solo el h5 */
+@media (max-width: 600px) {
+  .industria3-carousel-caption p {
+    display: none;
+  }
+}

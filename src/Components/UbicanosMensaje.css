@@ -1,0 +1,211 @@
+/* ============================= */
+/*       UbicanosMensajes.css   */
+/* ============================= */
+
+/* Global Styles */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Sección principal */
+.ubicanos-section {
+  margin: 6rem 0 0;
+  position: relative;
+}
+
+.tituloUbicanos {
+  font-size: 40px;
+  font-weight: 600;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Mapa container */
+.ubicanos-map-container {
+  position: relative;
+  width: 80%;
+  padding-bottom: 40.25%; /* Relación 16:9 */
+  border-radius: 8px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Aplica filtro en escala de grises al iframe del mapa */
+.ubicanos-map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(100%) contrast(1);
+}
+
+/* Información de contacto */
+.ubicanos-contact-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  max-width: 280px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.Dub {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.Tub {
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Íconos sociales */
+.ubicanos-social-icons a {
+  color: #333;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.ubicanos-social-icons a:hover {
+  color: #222;
+}
+
+/* Botón de mensaje */
+.message-btn {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/*        Overlay Styles        */
+/* ============================= */
+
+/* Cubre toda la sección y opaca el fondo */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Opacidad del fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+}
+
+/* Contenido emergente */
+.overlay-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón para retroceder */
+.back-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* ============================= */
+/*         Form Styles          */
+/* ============================= */
+
+.datos-title {
+  font-size: 40px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.datos-textarea {
+  font-size: 16px;
+  color: #222;
+  border: 1px solid #222;
+  resize: none;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.datos-textarea:focus {
+  outline: none;
+  border: 1px solid #c5c5c5;
+}
+
+.datos-email-input {
+  font-size: 16px;
+  color: #222;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.datos-email-input:focus {
+  outline: none;
+  border: 1px solid #c5c5c5;
+}
+
+/* Botón Enviar */
+.datos-btn {
+  font-size: 16px;
+  color: #222;
+  background-color: #fff;
+  border: 1px solid #222;
+  border-radius: 4px;
+  padding: 8px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.datos-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* ============================= */
+/*       Responsive Styles      */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .ubicanos-map-container {
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+  }
+  .tituloUbicanos {
+    font-size: 32px;
+  }
+  .datos-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ubicanos-contact-info {
+    max-width: 90%;
+    margin: 10px;
+  }
+  .datos-textarea,
+  .datos-email-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .datos-btn {
+    font-size: 14px;
+    padding: 6px 15px;
+  }
+}
