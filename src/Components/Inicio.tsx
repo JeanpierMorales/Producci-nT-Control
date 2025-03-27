@@ -11,6 +11,7 @@ import "./Proceso.css";
 import "./Novedades.css";
 import "./Contactanos.css";
 import "./Ubicanos.css";
+import "./UbicanosMensaje.css";
 import "./Datos.css";
 import "./Footer.css";
 
@@ -788,112 +789,6 @@ const Inicio: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <section className="ubicanos-section py-5">
-        <div className="container">
-          <h2 className="text-center mb-4 tituloUbicanos">Ubícanos</h2>
-          <br />
-          <div className="ubicanos-map-container">
-            <iframe
-              title="Ubicación"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1592.103873250239!2d-80.62735437049088!3d-5.197512897716894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a107ddd0efae7%3A0xaeb976088d0ea599!2sPlaza%20de%20Armas%20de%20Piura!5e0!3m2!1ses!2spe!4v1741975395056!5m2!1ses!2spe"
-              style={{ border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            ></iframe>
-            <div className="ubicanos-contact-info">
-              <h3 className="mb-3 Dub">
-                Estamos en contacto
-                <button
-                  className="btn message-btn"
-                  onClick={() => setShowOverlay(true)}
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="#222"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2 3h20v14H5l-3 3V3z"
-                      stroke="#222"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-              </h3>
-              <p className="mb-1 Tub">T-Control- Perú</p>
-              <p className="mb-1 Tub">987 654 321</p>
-              <div className="ubicanos-social-icons">
-                <a href="#!" aria-label="Twitter">
-                  <i className="bi bi-twitter"></i>
-                </a>
-                <a href="#!" aria-label="Facebook">
-                  <i className="bi bi-facebook"></i>
-                </a>
-                <a href="#!" aria-label="Instagram">
-                  <i className="bi bi-instagram"></i>
-                </a>
-                <a href="#!" aria-label="LinkedIn">
-                  <i className="bi bi-linkedin"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {showOverlay && (
-          <div className="overlay">
-            <div className="overlay-content">
-              <h2 className="datos-title mb-4">Déjanos un mensaje</h2>
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="mensaje" className="form-label">
-                    Mensaje
-                  </label>
-                  <textarea
-                    id="mensaje"
-                    className="form-control datos-textarea"
-                    rows={5}
-                    placeholder="Escribe tu mensaje aquí..."
-                    value={mensaje}
-                    onChange={(e) => setMensaje(e.target.value)}
-                  ></textarea>
-                </div>
-                <div className="form-group mt-3">
-                  <label htmlFor="correo" className="form-label">
-                    Correo
-                  </label>
-                  <input
-                    type="email"
-                    id="correo"
-                    className="form-control datos-email-input"
-                    placeholder="name@mail.com"
-                    value={correo}
-                    onChange={(e) => setCorreo(e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="btn-group mt-3">
-                  <button type="submit" className="btn datos-btn">
-                    Enviar
-                  </button>
-                  <button
-                    className="btn btn-secondary back-btn"
-                    onClick={() => setShowOverlay(false)}
-                  >
-                    Atrás
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
-      </section>
       {/* Sección Contactanos ----------------------------------------------------------------------------------------------------------------------*/}
       <section className="container my-5 Contactanos" id="Contactanos">
         <div className="text-center">
@@ -1006,16 +901,13 @@ const Inicio: React.FC = () => {
           </div>
         </div>
       </section>
+      {/*UBICANOS MENSAJE ---------------------------------------------------------------------------------------------------------------------- */}
 
-      {/* Sección Ubicanos ----------------------------------------------------------------------------------------------------------------------*/}
-      <section className="ubicanos-section py-5" id="Ubicanos">
+      <section className="ubicanos-section py-5">
         <div className="container">
           <h2 className="text-center mb-4 tituloUbicanos">Ubícanos</h2>
           <br />
-
-          {/* Contenedor relativo para el mapa y el recuadro de contacto */}
           <div className="ubicanos-map-container">
-            {/* Mapa en iframe */}
             <iframe
               title="Ubicación"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1592.103873250239!2d-80.62735437049088!3d-5.197512897716894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a107ddd0efae7%3A0xaeb976088d0ea599!2sPlaza%20de%20Armas%20de%20Piura!5e0!3m2!1ses!2spe!4v1741975395056!5m2!1ses!2spe"
@@ -1024,14 +916,32 @@ const Inicio: React.FC = () => {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             ></iframe>
-
-            {/* Recuadro de información de contacto (overlay) */}
             <div className="ubicanos-contact-info">
-              <h3 className="mb-3 Dub">Estamos en contacto</h3>
+              <h3 className="mb-3 Dub">
+                Estamos en contacto
+                <button
+                  className="btn message-btn"
+                  onClick={() => setShowOverlay(true)}
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="#222"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 3h20v14H5l-3 3V3z"
+                      stroke="#222"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </h3>
               <p className="mb-1 Tub">T-Control- Perú</p>
               <p className="mb-1 Tub">987 654 321</p>
-              {/*<p className="mb-1 Tub">Perú</p>
-            <p className="mb-3 Tub">tcontrolsac@gmail.com</p> */}
               <div className="ubicanos-social-icons">
                 <a href="#!" aria-label="Twitter">
                   <i className="bi bi-twitter"></i>
@@ -1049,62 +959,56 @@ const Inicio: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-      {/* Sección Datos ----------------------------------------------------------------------------------------------------------------------*/}
-      <section className="datos-section" id="Datos">
-        <div className="container d-flex flex-column align-items-center">
-          {/* Título principal */}
-          <h2 className="datos-title mb-4">Déjanos un mensaje</h2>
 
-          {/* Contenedor con borde redondeado */}
-          <div className="datos-container p-4 d-flex">
-            <form onSubmit={handleSubmit} className="flex-grow-1">
-              {/* Etiqueta "Comentanos" */}
-              <h3 className="datos-subtitle mb-3">Comentanos</h3>
-
-              {/* Textarea para el mensaje */}
-              <div className="mb-3">
-                <textarea
-                  className="form-control datos-textarea"
-                  rows={5}
-                  placeholder="Escribe tu mensaje aquí..."
-                  value={mensaje}
-                  onChange={(e) => setMensaje(e.target.value)}
-                ></textarea>
-              </div>
-
-              {/* Sección de input de correo y botón */}
-              <div className="d-flex align-items-center datos-email-container">
-                <input
-                  type="email"
-                  className="form-control datos-email-input"
-                  placeholder="correo@mail.com"
-                  value={correo}
-                  onChange={(e) => setCorreo(e.target.value)}
-                  required
-                />
-                <button type="submit" className="btn datos-btn ms-2">
-                  Notifícame
-                </button>
-              </div>
-            </form>
-            {/* SVG Icono de mensaje */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 32 32"
-              className="datos-icon ms-4"
-              style={{ width: "30%" }}
-            >
-              <path
-                d="M28 2H4C2.346 2 1 3.346 1 5v16c0 1.654 1.346 3 3 3h3v5a1.001 1.001 0 0 0 1.625.781L15.851 24H28c1.654 0 3-1.346 3-3V5c0-1.654-1.346-3-3-3zM16 16H8a1 1 0 1 1 0-2h8a1 1 0 1 1 0 2zm8-4H8a1 1 0 1 1 0-2h16a1 1 0 1 1 0 2z"
-                fill="#222222"
-                opacity="1"
-                data-original="#000000"
-              ></path>
-            </svg>
+        {showOverlay && (
+          <div className="overlay">
+            <div className="overlay-content">
+              <h2 className="datos-title mb-4">Déjanos un mensaje</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="mensaje" className="form-label">
+                    Mensaje
+                  </label>
+                  <textarea
+                    id="mensaje"
+                    className="form-control datos-textarea"
+                    rows={5}
+                    placeholder="Escribe tu mensaje aquí..."
+                    value={mensaje}
+                    onChange={(e) => setMensaje(e.target.value)}
+                  ></textarea>
+                </div>
+                <div className="form-group mt-3">
+                  <label htmlFor="correo" className="form-label">
+                    Correo
+                  </label>
+                  <input
+                    type="email"
+                    id="correo"
+                    className="form-control datos-email-input"
+                    placeholder="name@mail.com"
+                    value={correo}
+                    onChange={(e) => setCorreo(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="btn-group mt-3">
+                  <button type="submit" className="btn datos-btn">
+                    Enviar
+                  </button>
+                  <button
+                    className="btn btn-secondary back-btn"
+                    onClick={() => setShowOverlay(false)}
+                  >
+                    Atrás
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
+        )}
       </section>
+
       {/* Footer ----------------------------------------------------------------------------------------------------------------------*/}
       <footer className="footer" id="Footer">
         <div className="footer-top">
