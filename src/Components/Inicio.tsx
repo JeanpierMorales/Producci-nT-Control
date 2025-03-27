@@ -31,7 +31,6 @@ import novedadesImage3 from "../Media/Image/novedades3.jpg";
 
 // Footer
 import FooterLogo from "../Media/Image/T-Control.png"; // Importa la imagen
-import IndustriasDos from "./IndustriasDos";
 
 const Inicio: React.FC = () => {
   // Sección de card para Industrias
