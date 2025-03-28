@@ -5,7 +5,7 @@
 
 /* Contenedor general de la sección */
 .industria3-section {
-  margin: 0rem 0 6rem;
+  margin: 6rem 0 6rem;
 }
 
 /* Título principal */
@@ -20,11 +20,11 @@
 
 /* Subtítulo */
 .industria3-subtitle {
-  font-size: clamp(9px, 2vw, 21px);
+  font-size: clamp(9px, 2vw, 18px);
   color: #343434;
   font-weight: 500;
   text-align: center;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto 2rem auto;
   font-family: "Inter", sans-serif;
 }
@@ -32,8 +32,8 @@
 /* Carrusel: se define altura, bordes y bordes redondeados */
 .industria3-carousel {
   margin: 0 auto;
-  max-width: 900px;
-  height: 500px; /* Altura fija para el carrusel */
+  max-width: 800px;
+  height: 400px; /* Altura fija para el carrusel */
   position: relative;
   overflow: hidden;
   border-radius: 40px;
@@ -41,7 +41,7 @@
 
 /* Cada item del carrusel debe ocupar la altura definida */
 .industria3-carousel-item {
-  height: 500px;
+  height: 400px;
   position: relative;
 }
 

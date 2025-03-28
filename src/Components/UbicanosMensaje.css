@@ -50,7 +50,7 @@ body {
   background-color: #fff;
   color: #333;
   padding: 20px;
-  max-width: 280px;
+  max-width: 480px;
   margin: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -120,14 +120,37 @@ body {
 
 /* Botón para retroceder */
 .back-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #6c757d; /* Color gris */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #5a6268; /* Gris más oscuro al pasar el mouse */
 }
 
 /* ============================= */
 /*         Form Styles          */
 /* ============================= */
+
+/* Contenedor principal del formulario */
+.datos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  gap: 1.5rem; /* Espaciado entre los elementos */
+  border: 1px solid #ccc; /* Borde del formulario */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 2rem; /* Espaciado interno */
+  background-color: #f9f9f9; /* Fondo claro */
+  max-width: 500px; /* Ancho máximo */
+  margin: 0 auto; /* Centra el formulario en la página */
+}
 
 .datos-title {
   font-size: 40px;
@@ -135,46 +158,52 @@ body {
   text-align: center;
 }
 
-.datos-textarea {
+/* Estilo para los inputs y textarea */
+.datos-textarea,
+.datos-email-input {
+  width: 100%; /* Ocupan todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el padding en el ancho */
   font-size: 16px;
   color: #222;
   border: 1px solid #222;
-  resize: none;
   border-radius: 4px;
   padding: 10px;
-}
-
-.datos-textarea:focus {
-  outline: none;
-  border: 1px solid #c5c5c5;
 }
 
 .datos-email-input {
-  font-size: 16px;
-  color: #222;
-  border: 1px solid #222;
-  border-radius: 4px;
-  padding: 10px;
+  max-width: 480px; /* Ancho máximo de 480px */
+  border-radius: 20px; /* Bordes redondeados */
 }
 
+.datos-textarea:focus,
 .datos-email-input:focus {
   outline: none;
   border: 1px solid #c5c5c5;
 }
 
+/* Contenedor para los botones */
+.datos-buttons {
+  display: flex;
+  justify-content: space-between; /* Espaciado entre los botones */
+  width: 100%; /* Ocupa todo el ancho del formulario */
+}
+
 /* Botón Enviar */
 .datos-btn {
   font-size: 16px;
-  color: #222;
-  background-color: #fff;
-  border: 1px solid #222;
+  color: #fff;
+  background-color: #007bff; /* Color azul */
+  border: none;
   border-radius: 4px;
-  padding: 8px 20px;
-  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(52, 52, 52, 0.3); /* Sombra con color #343434 */
 }
 
 .datos-btn:hover {
-  background-color: #f0f0f0;
+  background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(52, 52, 52, 0.5); /* Sombra más intensa al pasar el mouse */
 }
 
 /* ============================= */
