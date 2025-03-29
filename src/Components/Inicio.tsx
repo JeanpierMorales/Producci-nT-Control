@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
 // Importar los css
 import "./Inicio.css";
@@ -34,97 +34,7 @@ import novedadesImage3 from "../Media/Image/novedades3.jpg";
 import FooterLogo from "../Media/Image/T-Control.png"; // Importa la imagen
 
 const Inicio: React.FC = () => {
-  // Sección de card para Industrias
-
-  const cards = [
-    { id: 1, title: "Eléctrica", className: "Eléctrica" },
-    { id: 2, title: "Redes", className: "Redes" },
-    { id: 3, title: "Construcción", className: "Construcción" },
-    { id: 4, title: "Agroindustria", className: "Agroindustria" },
-    { id: 5, title: "Automatización", className: "Automatización" },
-    { id: 6, title: "Seguridad", className: "Seguridad" },
-  ];
-
-  // Se duplica el arreglo tres veces para lograr un efecto infinito
-  const duplicatedCards = [...cards, ...cards, ...cards];
-
-  // Comenzamos en la posición central de la secuencia duplicada para poder retroceder y avanzar
-  const initialIndex = cards.length;
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  // Controla si la transición está habilitada (para reinicios sin efecto visual)
-  const [transitionEnabled, setTransitionEnabled] = useState(true);
-
-  // Referencia al contenedor de la pista del carrusel
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  // Función para avanzar una card (solo hacia adelante)
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => prevIndex + 1);
-  };
-
-  // Función para retroceder una card manualmente mediante el botón "previo"
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? duplicatedCards.length - 1 : prevIndex - 1
-    );
-  };
-
-  // Efecto para el auto-slide cada 4 segundos (4000ms)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Efecto para el loop infinito:
-  // Si el índice alcanza el final de la serie duplicada o se va demasiado atrás, se reinicia sin transición
-  useEffect(() => {
-    if (currentIndex >= duplicatedCards.length - cards.length) {
-      setTransitionEnabled(false);
-      setCurrentIndex((prevIndex) => prevIndex - cards.length);
-    } else if (currentIndex < cards.length) {
-      setTransitionEnabled(false);
-      setCurrentIndex((prevIndex) => prevIndex + cards.length);
-    } else {
-      setTransitionEnabled(true);
-    }
-  }, [currentIndex, cards.length, duplicatedCards.length]);
-  /// IndustriasDos
-  const cardsData = [
-    {
-      title: "Eléctrica",
-      text: " Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad., Infraestructura energética y distribución eficiente..",
-      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
-    },
-    {
-      title: "Redes y Telecomunicaciones",
-      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Soluciones en conectividad y comunicaciones.",
-      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
-    },
-    {
-      title: "Construcción",
-      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Ingeniería y sistemas electromecánicos para proyectos industriales.",
-      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
-    },
-    {
-      title: "Agroindustria",
-      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Automatización y mantenimiento de plantas de procesamiento.",
-      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
-    },
-    {
-      title: "Automatización y control Industrial",
-      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Optimización de procesos con tecnología avanzada.",
-      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
-    },
-    {
-      title: "Seguridad electrónica y video Vigilancia",
-      text: "Nos enorgullece ofrecer soluciones de vanguardia que transforman la manera en que las empresas operan y optimizan sus procesos, impulsando la eficiencia, la productividad y la seguridad.Protección y monitoreo inteligente.",
-      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
-    },
-  ];
-
-  // SLides tres industrias
+  //  Industrias Tres
 
   const slides = [
     {
