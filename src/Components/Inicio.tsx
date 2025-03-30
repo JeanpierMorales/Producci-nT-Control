@@ -3,18 +3,15 @@ import React, { useState } from "react";
 // Importar los css
 import "./Inicio.css";
 import "./Nosotros.css";
-import "./Industrias.css";
-import "./IndustriasDos.css";
 import "./IndustriasTres.css";
 import "./Especialidades.css";
 import "./Proceso.css";
 import "./Novedades.css";
 import "./Contactanos.css";
-import "./Ubicanos.css";
 import "./UbicanosMensaje.css";
-import "./Datos.css";
 import "./Footer.css";
 
+// Bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -38,47 +35,47 @@ const Inicio: React.FC = () => {
 
   const slides = [
     {
-      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+      img: "https://i.pinimg.com/736x/af/3a/bd/af3abdcde2f0de641a26a127d93991a7.jpg",
       title: "Eléctrica",
       text: "Infraestructura energética y distribución eficiente.",
     },
     {
-      img: "https://i.pinimg.com/736x/77/66/e9/7766e998b2f9660847dc755e485e90df.jpg",
+      img: "https://cdn.pixabay.com/photo/2017/07/31/16/18/engineer-2558705_1280.jpg",
       title: "Redes y Telecomunicaciones",
       text: "Soluciones en conectividad y comunicaciones.",
     },
     {
-      img: "https://i.pinimg.com/736x/f1/24/55/f124556a1b6281e7c119730fd5c7cb56.jpg",
+      img: "https://cdn.pixabay.com/photo/2019/02/06/16/32/architect-3979490_1280.jpg",
       title: "Construcción",
       text: "Ingeniería y sistemas electromecánicos para proyectos industriales.",
     },
     {
-      img: "https://i.pinimg.com/736x/e4/4c/3f/e44c3f9b18cc0125dd27170d93519983.jpg",
+      img: "https://i.pinimg.com/736x/f1/24/55/f124556a1b6281e7c119730fd5c7cb56.jpg",
       title: "Agroindustria",
       text: "Automatización y mantenimiento de plantas de procesamiento.",
     },
     {
-      img: "https://i.pinimg.com/736x/26/9c/f1/269cf1b98a1b7ba30c003a5818c81c8e.jpg",
+      img: "https://img.freepik.com/foto-gratis/trabajador-usa-panel-control-fabrica_140725-7625.jpg?t=st=1743267957~exp=1743271557~hmac=c6e9c504ff5729c6f084d18b960532f5eb9e7e1cc679566a656219ba9df2b874&w=1380",
       title: "Automatización y Control Industrial",
       text: "Optimización de procesos con tecnología avanzada.",
     },
     {
-      img: "https://i.pinimg.com/736x/cd/df/e7/cddfe74d5a278fdc8c21e8ba9951577a.jpg",
+      img: "https://img.freepik.com/foto-gratis/camara-vigilancia-incorporada-muro-piedra-edificio_93675-131321.jpg?t=st=1743268367~exp=1743271967~hmac=13729a25703c75528ccf50b5ad5edc5e57abddff78cd14f9f1f6f3eadf78766d&w=1380",
       title: "Seguridad Electrónica y Videovigilancia",
       text: "Protección y monitoreo inteligente.",
     },
     {
-      img: "https://i.pinimg.com/736x/b0/63/ee/b063ee8aae772be8d87e73ded5b97978.jpg",
+      img: "https://cdn.pixabay.com/photo/2024/07/14/13/46/ai-generated-8894582_1280.jpg",
       title: "Tecnológica",
       text: "Innovación y desarrollo tecnológico.",
     },
     {
-      img: "https://i.pinimg.com/474x/d3/20/65/d32065ad9f01111e590f27591bb64767.jpg",
+      img: "https://cdn.pixabay.com/photo/2017/10/31/13/55/desk-2905361_1280.jpg",
       title: "Industrial",
       text: "Soluciones industriales avanzadas.",
     },
     {
-      img: "https://i.pinimg.com/736x/44/97/f6/4497f66210a1ff6821bfc8347cd744d2.jpg",
+      img: "https://cdn.pixabay.com/photo/2017/07/14/11/28/hybrid-car-2503566_1280.jpg",
       title: "Automotriz",
       text: "Tecnología y eficiencia en la industria automotriz.",
     },
@@ -99,7 +96,7 @@ const Inicio: React.FC = () => {
     {
       title: "Sistemas SCADA y Telemetría",
       image:
-        "https://i.pinimg.com/736x/11/d7/51/11d751ec5e4a09002fcc031092d0cc53.jpg",
+        "https://t4.ftcdn.net/jpg/05/52/77/73/240_F_552777398_G8QVACrqTbSLblFWJxExPuv3nc4xYyyY.jpg",
     },
     {
       title: "Electrónica Industrial",
@@ -109,31 +106,31 @@ const Inicio: React.FC = () => {
     {
       title: "Automatización Industrial",
       image:
-        "https://i.pinimg.com/736x/a9/ec/99/a9ec99251ad0e8d13293e67174aece0e.jpg",
+        "https://img.freepik.com/foto-gratis/trabajador-fabrica-que-supervisa-maquinas-industriales-produccion-forma-remota-sala-control_342744-90.jpg?t=st=1743268613~exp=1743272213~hmac=fdd92ea81e689e21a119a85b0f6c3f0ffc699db16f6549f77409ee86b6660e9e&w=1380",
     },
     {
-      title: "Instrumentación y Control",
+      title: "Sistemas De Bombeo",
       image:
-        "https://i.pinimg.com/736x/c4/b1/95/c4b195ffd6bf9cde729a63f47ab1e23f.jpg",
+        "https://i.pinimg.com/736x/11/d7/51/11d751ec5e4a09002fcc031092d0cc53.jpg",
     },
   ];
 
   // Novedades
   const novedadesData = [
     {
-      fecha: "1 de Marzo, 2023",
+      //fecha: "1 de Marzo, 2023",
       titulo:
         "Desarrollo de nuevos modelos en la industria de los Sistemas de Bombeo",
       img: novedadesImage1, // Reemplaza con tu imagen
     },
     {
-      fecha: "18 de Julio, 2022",
+      //fecha: "18 de Julio, 2022",
       titulo:
         "Solución Avanzada de Seguridad Electrónica para Centros Logísticos",
       img: novedadesImage2,
     },
     {
-      fecha: "7 de Abril, 2020",
+      //fecha: "7 de Abril, 2020",
       titulo:
         "Tablero general 3F+T, 60HZ con vista Lateral, Frontal y Frontal interior",
       img: novedadesImage3, // Usa la imagen importada
@@ -197,7 +194,7 @@ const Inicio: React.FC = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link OpcionMenu c" href="#Industrias">
+                  <a className="nav-link OpcionMenu c" href="#Industria">
                     Industrias
                   </a>
                 </li>
@@ -250,6 +247,7 @@ const Inicio: React.FC = () => {
           telecomunicaciones para impulsar el crecimiento sostenible de tu
           industria.
         </p>
+        <br />
 
         <div className="nosotros-cards">
           {/* Misión */}
@@ -297,15 +295,18 @@ const Inicio: React.FC = () => {
 
       {/** IndustriasTres------------------------------------------------------------------------------------------------------------------ */}
 
-      <section className="industria3-section">
+      <section className="industria3-section" id="Industria">
         {/* Título de la sección */}
         <h2 className="industria3-title">Industrias</h2>
+        <br />
+        <br />
         {/* Subtítulo de la sección */}
         <p className="industria3-subtitle">
           Nos enorgullece ofrecer soluciones de vanguardia que transforman la
           manera en que las empresas operan y optimizan sus procesos, impulsando
           la eficiencia, la productividad y la seguridad.
         </p>
+        <br />
 
         {/* Carrusel de Bootstrap con auto-slide cada 3 segundos */}
         <div
@@ -416,7 +417,7 @@ const Inicio: React.FC = () => {
           </p>
         </div>
 
-        <div className="d-flex justify-content-center flex-wrap gap-3 mt-4 Proceso-cards">
+        <div className="d-flex justify-content-center gap-3 mt-4 Proceso-cards">
           {/* Card de Contacta */}
           <div className="card custom-card-Proceso">
             <div className="card-body d-flex flex-column">
@@ -465,12 +466,13 @@ const Inicio: React.FC = () => {
           <div className="card custom-card-Proceso">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title-Proceso text-center custom-title-Proceso">
-                Genera una estrategia
+                Analiza
               </h5>
               <br />
+              <br />
               <p className="card-text text-center custom-text-Proceso">
-                Definimos y planificamos un camino innovador para impulsar tu
-                crecimiento.
+                Definimos, planificamos y brindamos un camino innovador para
+                impulsar tu crecimiento.
               </p>
               <br />
               <div className="d-flex justify-content-center mt-1">
@@ -479,6 +481,7 @@ const Inicio: React.FC = () => {
                 </a>
               </div>
               {/* SVG en la parte inferior central de la tarjeta */}
+              <br />
               <div className="svg-icon-container">
                 <svg
                   className="svg-icon"
@@ -505,8 +508,8 @@ const Inicio: React.FC = () => {
               <br />
               <br />
               <p className="card-text text-center custom-text-Proceso">
-                Creamos soluciones tecnológicas a medida que optimizan procesos
-                y resultados.
+                Creamos soluciones con IT capaces de optimizar procesos y dar
+                resultados.
               </p>
               <br />
               <div className="d-flex justify-content-center mt-1">
@@ -547,8 +550,8 @@ const Inicio: React.FC = () => {
               <br />
               <br />
               <p className="card-text text-center custom-text-Proceso">
-                Impulsamos el crecimiento de capacidades y mercados de forma
-                sostenible.
+                Impulsamos el crecimiento de capacidades y mercados de una
+                manera sostenible.
               </p>
               <br />
               <div className="d-flex justify-content-center mt-1">
@@ -587,11 +590,13 @@ const Inicio: React.FC = () => {
           {/* Título */}
           <h2 className="novedades-title">Novedades</h2>
           <br />
+          <br />
           {/* Subtítulo */}
           <p className="novedades-subtitle">
             Cada solución implementada refleja nuestro compromiso con la
             innovación tecnológica y la excelencia operativa.
           </p>
+          <br />
 
           {/* Contenedor de las tarjetas de novedades */}
           <div className="novedades-cards d-flex flex-wrap justify-content-center">
@@ -601,7 +606,7 @@ const Inicio: React.FC = () => {
                   <img src={item.img} alt={item.titulo} />
                   {/* Div pequeño inferior */}
                   <div className="novedad-info">
-                    <span className="novedad-fecha">{item.fecha}</span>
+                    {/*<span className="novedad-fecha">{item.fecha}</span>*/}
                     <h4 className="novedad-titulo">{item.titulo}</h4>
                   </div>
                 </div>
@@ -708,7 +713,7 @@ const Inicio: React.FC = () => {
 
       {/*UBICANOS MENSAJE ---------------------------------------------------------------------------------------------------------------------- */}
 
-      <section className="ubicanos-section py-5">
+      <section className="ubicanos-section py-5" id="Datos">
         <div className="container">
           <h2 className="text-center mb-4 tituloUbicanos">Ubícanos</h2>
           <br />
@@ -729,8 +734,8 @@ const Inicio: React.FC = () => {
                   onClick={() => setShowOverlay(true)}
                 >
                   <svg
-                    width="30"
-                    height="30"
+                    width="35"
+                    height="35"
                     viewBox="0 0 24 24"
                     fill="#222"
                     xmlns="http://www.w3.org/2000/svg"
@@ -745,7 +750,7 @@ const Inicio: React.FC = () => {
                   </svg>
                 </button>
               </h3>
-              <p className="mb-1 Tub">T-Control- Perú</p>
+              {/*<p className="mb-1 Tub">T-Control- Perú</p>
               <p className="mb-1 Tub">987 654 321</p>
               <div className="ubicanos-social-icons">
                 <a href="#!" aria-label="Twitter">
@@ -760,7 +765,7 @@ const Inicio: React.FC = () => {
                 <a href="#!" aria-label="LinkedIn">
                   <i className="bi bi-linkedin"></i>
                 </a>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
@@ -784,13 +789,13 @@ const Inicio: React.FC = () => {
                   ></textarea>
                 </div>
                 <div className="form-group mt-3">
-                  <label htmlFor="correo" className="form-label ">
+                  <label htmlFor="correo" className="form-label">
                     Correo
                   </label>
                   <input
                     type="email"
                     id="correo"
-                    className="form-control datos-email-input "
+                    className="form-control datos-email-input"
                     placeholder="name@mail.com"
                     value={correo}
                     onChange={(e) => setCorreo(e.target.value)}
@@ -798,7 +803,7 @@ const Inicio: React.FC = () => {
                   />
                 </div>
                 <div className="btn-group mt-3 datos-buttons">
-                  <button type="submit" className="btn datos-btn ">
+                  <button type="submit" className="btn datos-btn">
                     Enviar
                   </button>
                   <button
@@ -975,11 +980,13 @@ const Inicio: React.FC = () => {
         </div>
 
         <div className="footer-bottom">
-          <p className="tControl2025">© 2025 T-Control</p>
-          <p>Política Ambiental</p>
+          <p className="tControl2025">
+            © 2025 T-Control. Todos los derechos reservados.
+          </p>
+          {/*<p>Política Ambiental</p>
           <p>Política de Calidad</p>
           <p>Privacidad</p>
-          <p>Certificado ISO 9001:2015 </p>
+          <p>Certificado ISO 9001:2015 </p>*/}
         </div>
 
         {/* Flecha de scroll hacia arriba */}

@@ -3,8 +3,7 @@
   text-align: center;
   padding: 0px 20px;
   background-color: #fff;
-  margin: 6rem 0rem 0rem;
-  padding: 0rem;
+  margin: 10rem 0rem;
 }
 
 /* Título de la sección */
@@ -23,8 +22,8 @@
 /* Subtítulo de la sección */
 .nosotros-subtitulo {
   font-size: 16px;
-  color: #222;
-  max-width: 600px;
+  color: #929292;
+  max-width: 700px;
   margin: 0 auto 50px;
   text-align: center;
   font-family: "Inter", sans-serif;
@@ -36,14 +35,14 @@
 .nosotros-cards {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 /* Estilo de cada card */
 .cardNosotros {
-  width: 300px;
-  height: 400px;
+  width: 290px;
+  height: 350px;
   perspective: 1000px; /* Añade perspectiva para el efecto 3D */
 }
 
@@ -168,7 +167,7 @@
   background-image: url("https://i.pinimg.com/736x/e8/2e/d0/e82ed0a803cbc6fc21db7f4897e17203.jpg");
 }
 .vision {
-  background-image: url("https://i.pinimg.com/736x/42/b7/e3/42b7e3e204ad93f3e39e7bd37b0bfb1f.jpg");
+  background-image: url("../Media/Image/Mision.png"); /* Cambia la ruta a una carpeta local */
 }
 .valores {
   background-image: url("https://i.pinimg.com/736x/42/3f/ba/423fba557438587bf43ee85c973e0739.jpg");
@@ -208,6 +207,7 @@
 
   .cardNosotros {
     width: 200px;
+    height: 200px;
   }
 
   .card-img {
@@ -220,24 +220,34 @@
 }
 
 @media (max-width: 576px) {
-  .nosotros-titulo {
-    font-size: 1.5rem;
+  /* Para pantallas pequeñas se desactiva la animación 3D de la card */
+  .card-inner {
+    transform: none !important;
+    transition: opacity var(--transition-speed) ease;
   }
-
-  .nosotros-subtitulo {
-    font-size: 0.8rem;
+  /* La parte trasera se oculta inicialmente y se posiciona abajo */
+  .card-back {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity var(--transition-speed) ease,
+      transform var(--transition-speed) ease;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
-
-  .cardNosotros {
-    width: 100%;
-    margin-bottom: 1rem;
+  /* La parte frontal permanece visible */
+  .card-front {
+    opacity: 1;
+    transition: opacity var(--transition-speed) ease;
   }
-
-  .card-img {
-    height: 150px;
+  /* Al interactuar (hover) o al tocar, se oculta la parte frontal y se muestra la parte trasera */
+  .cardNosotros:hover .card-front,
+  .cardNosotros:focus .card-front {
+    opacity: 0;
   }
-
-  .card-text-Nosotros {
-    font-size: 0.7rem;
+  .cardNosotros:hover .card-back,
+  .cardNosotros:focus .card-back {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

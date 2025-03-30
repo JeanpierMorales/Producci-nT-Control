@@ -75,7 +75,7 @@
 .social-icons svg {
   width: 30px;
   height: 30px;
-  fill: #fff; /* Cambia el color según sea necesario */
+  fill: #fff;
 }
 
 .tControl2025 {
@@ -118,6 +118,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10000; /* Se ubica por encima de todos los demás elementos */
 }
 
 .pathFlecha {
@@ -134,6 +135,8 @@
 }
 
 /* Responsividad */
+
+/* Para pantallas menores a 1200px */
 @media (max-width: 1200px) {
   .footer-main {
     padding: 4rem 3rem;
@@ -141,16 +144,15 @@
   }
 }
 
+/* Para pantallas menores a 768px */
 @media (max-width: 768px) {
   .footer-main {
     padding: 3rem 2rem;
     grid-template-columns: 1fr;
   }
-
   .footer-section h3 {
     font-size: 1.1em;
   }
-
   .footer-section p,
   .footer-section ul,
   .footer-section li,
@@ -159,23 +161,21 @@
   }
 }
 
+/* Para pantallas menores a 480px */
 @media (max-width: 480px) {
   .footer-main {
     padding: 2rem 1rem;
     grid-template-columns: 1fr;
   }
-
   .footer-section h3 {
     font-size: 1em;
   }
-
   .footer-section p,
   .footer-section ul,
   .footer-section li,
   .footer-bottom p {
-    font-size: 5em;
+    font-size: 0.8em;
   }
-
   .footer-bottom {
     flex-direction: column;
     align-items: center;

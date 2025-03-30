@@ -1,8 +1,9 @@
 /* Variables para tamaños de fuente */
 :root {
-  --font-large: 40px; /* Para títulos grandes */
-  --font-medium: 21px; /* Para el botón de Servicios */
-  --font-small: 16px; /* Para párrafos, navbar, etc. */
+  --font-large: 80px; /* Título principal para pantallas grandes */
+  --font-medium: 21px; /* Botón de Servicios en pantallas grandes */
+  --font-small: 16px; /* Párrafos, navbar, etc. */
+  --transition-speed: 0.2s; /* Duración de las transiciones */
 }
 
 /* Contenedor principal: ocupa el 100% del viewport */
@@ -12,36 +13,49 @@
   overflow: hidden;
   width: 98.9vw;
   height: 100vh;
-  margin: 0; /* Elimina márgenes */
+  margin: 0;
+  transition: filter var(--transition-speed) ease;
 }
-/* Video de fondo: se expande al 100% del viewport y se adapta */
-#bg-video {
+
+.Inicio {
+  margin-bottom: 10rem;
+}
+/* Overlay oscuro cuando el menú está activo (CSS-only usando :has) */
+.inicio-container:has(.navbar-collapse.show)::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover; /* Se ajusta al contenedor sin distorsionar */
-  z-index: -2; /* Queda detrás de todo el contenido */
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 34, 34, 0.8);
+  /* El z-index debe estar por encima del video y contenido, pero debajo del menú */
+  z-index: 5;
+  transition: background var(--transition-speed) ease;
 }
 
-/* Overlay para oscurecer el video de fondo */
+/* Video de fondo: se oscurece con un filtro (ajusta el valor según lo necesites) */
+#bg-video {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(0.5);
+  z-index: -2;
+}
+
+/* Overlay para oscurecer el video de fondo (si se usa) */
 #bg-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Ajusta la opacidad para oscurecer más */
-  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7); /* 70% de opacidad */
+  z-index: 5;
 }
 
-/* Menú de opciones y barra de navegación */
+/* Barra de navegación */
 .navbar-custom {
   display: flex;
   justify-content: space-between;
@@ -54,20 +68,33 @@
   top: 20px;
   left: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 10;
   padding: 1rem 10rem;
+  transition: padding var(--transition-speed) ease;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  align-items: flex-end;
+  padding-right: 3rem;
+  transition: padding var(--transition-speed) ease;
 }
 
-/* Enlaces del menú: Se forza el color hover en todos los estados */
+/* Botón de colapso en blanco y su ícono */
+.navbar-toggler {
+  color: #fff;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Enlaces del menú */
 .OpcionMenu,
 .OpcionMenu:active,
 .OpcionMenu:focus {
@@ -75,11 +102,17 @@
   color: #fff;
   font-size: var(--font-small);
   font-weight: 600;
+  transition: color var(--transition-speed) ease;
 }
-
 .OpcionMenu:hover {
-  text-decoration: none;
   color: #dedcdc;
+}
+.nav-link {
+  padding: 0px;
+}
+/* Borde inferior sutil al pasar el cursor en menú extendido (responsive) */
+.navbar-collapse .OpcionMenu:hover {
+  border-bottom: 3px solid #3da7ab;
 }
 
 /* Logo */
@@ -94,43 +127,35 @@
   padding-top: 5rem;
 }
 
-/* Posicionamiento de textos (ajustable según se requiera) */
-.content {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-  color: #c5c5c5;
-  max-width: 600px;
-  font-size: var(--font-small);
-}
-
-/* Texto principal y párrafos */
-.ContInicio {
-  max-width: 530px;
-  color: #ffffff;
-  margin-left: 10rem;
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-
-/* Título grande */
+/* Título principal */
 .tituloInicio {
   margin-top: 12rem;
   max-width: 450px;
-  font-weight: bold;
+  font-weight: 600;
   color: #fff;
-  font-size: 80px;
+  font-size: var(--font-large);
   line-height: 1.1;
   margin-bottom: 2rem;
   margin-left: 10rem;
   font-family: "Inter", sans-serif;
-  font-weight: 600;
+  transition: font-size var(--transition-speed) ease,
+    margin var(--transition-speed) ease;
 }
 
-/* Botón de Servicios: se fuerza el color hover en estados active/focus y se asigna tamaño de fuente medio */
+/* Texto descriptivo */
+.ContInicio {
+  max-width: 530px;
+  color: #ffffff;
+  margin-left: 10rem;
+  font-size: var(--font-small);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: font-size var(--transition-speed) ease,
+    margin var(--transition-speed) ease;
+}
+
+/* Botón de Servicios */
 .BServicios,
 .BServicios:active,
 .BServicios:focus {
@@ -141,58 +166,123 @@
   border-radius: 0;
   margin-bottom: 3rem;
   margin-left: 10rem;
-  font-size: 16px;
+  font-size: var(--font-small);
+  padding: 0.8rem 1.5rem;
+  transition: font-size var(--transition-speed) ease,
+    margin var(--transition-speed) ease, padding var(--transition-speed) ease;
 }
-
 .BServicios:hover {
   background-color: #3da7ab;
   color: #fff;
 }
 
-/* Ajustes Responsive: se quita margin-left fijo en pantallas pequeñas y se centra el contenido */
-@media (max-width: 768px) {
-  .ContInicio,
-  .tituloInicio,
-  .BServicios {
-    margin-left: 0;
-    margin-right: 0;
+/* Ajustes Responsive para pantallas medianas (menos de 994px) */
+@media (max-width: 994px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .tituloInicio {
+    font-size: 60px; /* Título mediano */
     text-align: center;
-    padding: 0 1rem;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 13rem;
+  }
+  .ContInicio {
+    font-size: 15px;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 3rem;
+  }
+  .BServicios {
+    font-size: 15px;
+    padding: 0.6rem 1.2rem;
+    display: block;
+    margin: 1.5rem auto 3rem auto;
+  }
+  .navbar ul {
+    padding-right: 1rem;
+  }
+  .a,
+  .b,
+  .c,
+  .d,
+  .e {
+    margin-top: 1rem;
+  }
+}
+
+/* Ajustes Responsive para pantallas pequeñas (hasta 500px) */
+@media (max-width: 600px) {
+  /* Menú desplegable: ocupar el 100% del ancho con fondo destacado */
+  .navbar-collapse {
+    width: 100%;
+    position: absolute;
+    top: 100px; /* Ajusta la distancia desde el top si es necesario */
+    left: -50px;
+    z-index: 20;
+    padding: 1rem 0;
+    transition: background-color var(--transition-speed) ease;
+  }
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+  }
+  .navbar ul {
+    padding-right: 0;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  /* Ajuste de la posición del contenido si es necesario */
-  .content {
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .tituloInicio {
+    font-size: 50px; /* Título pequeño */
+    text-align: center;
+    max-width: 100%;
   }
-
+  .ContInicio {
+    font-size: 14px;
+    text-align: center;
+    max-width: 100%;
+  }
+  .BServicios {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    display: block;
+    margin: 1.5rem auto 3rem auto;
+  }
   .barraNav {
     padding: 2rem 1rem;
   }
+  .a,
+  .b,
+  .c,
+  .d,
+  .e {
+    margin-top: 2rem;
+  }
 }
 
-/* Clases de tipografía */
+/* Clases adicionales de tipografía */
 .a {
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
+  border-bottom: 2px solid #fff;
 }
 
 .b {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .c {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .d {
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .e {
-  font-family: "Inter", sans-serif;
   font-weight: 900;
 }

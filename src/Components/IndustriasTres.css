@@ -5,28 +5,33 @@
 
 /* Contenedor general de la sección */
 .industria3-section {
-  margin: 6rem 0 6rem;
+  margin: 10rem 0rem;
+  padding: 0rem 0.8rem 0rem 0.8rem;
 }
 
 /* Título principal */
 .industria3-title {
-  color: #222;
-  font-size: clamp(21px, 4vw, 40px);
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 1rem auto;
+  font-size: 40px;
+  margin-bottom: 10px;
   font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  max-width: 500px;
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+  text-align: center; /* Centra el texto dentro del elemento */
 }
 
 /* Subtítulo */
 .industria3-subtitle {
-  font-size: clamp(9px, 2vw, 18px);
-  color: #343434;
-  font-weight: 500;
+  font-size: 16px;
+  color: #929292;
+  max-width: 700px;
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
   font-family: "Inter", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 auto; /* Centra el contenido horizontalmente */
 }
 
 /* Carrusel: se define altura, bordes y bordes redondeados */
@@ -36,7 +41,7 @@
   height: 400px; /* Altura fija para el carrusel */
   position: relative;
   overflow: hidden;
-  border-radius: 40px;
+  border-radius: 20px;
 }
 
 /* Cada item del carrusel debe ocupar la altura definida */
@@ -106,10 +111,58 @@
 .industria3-carousel-control-next-icon {
   transform: rotate(-45deg);
 }
+@media (max-width: 860px) {
+  /* Ajustar el tamaño del carrusel */
+  .industria3-carousel {
+    max-width: 100%;
+    height: 400px; /* Altura ajustada */
+    width: 650px; /* Ancho ajustado */
+  }
+  .industria3-carousel-item {
+    height: 400px; /* Altura ajustada */
+  }
+}
 
-/* En pantallas menores a 600px, se oculta el párrafo para mostrar solo el h5 */
-@media (max-width: 600px) {
-  .industria3-carousel-caption p {
+/* Estilos para pantallas menores a 600px */
+@media (max-width: 755px) {
+  /* Reducir el tamaño del carrusel */
+  .industria3-carousel {
+    max-width: 100%;
+    height: 420px; /* Altura reducida */
+    width: 430px;
+  }
+  .industria3-carousel-item {
+    height: 420px;
+  }
+  .industria3-subtitle {
+    font-size: 0.9rem;
     display: none;
+  }
+
+  /* Reposicionar el caption */
+  .industria3-carousel-caption {
+    top: 10px; /* Lo posiciona en la parte superior interna */
+    bottom: auto; /* Elimina la posición inferior */
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+  }
+  .industria3-carousel-caption h5 {
+    font-size: 0.9rem; /* Tamaño de fuente reducido */
+    margin: 0;
+    position: absolute; /* Posiciona el h5 */
+    top: 10px; /* Lo coloca en la parte superior interna */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .industria3-carousel-caption p {
+    display: none; /* Se oculta el párrafo */
+  }
+}
+
+/* Ajustes adicionales para pantallas hasta 768px (si deseas reducir ligeramente otros textos) */
+@media (max-width: 768px) {
+  .industria3-subtitle {
+    font-size: 0.9rem;
   }
 }
