@@ -411,10 +411,7 @@ const Inicio: React.FC = () => {
       {/* Sección Proceso ----------------------------------------------------------------------------------------------------------------------*/}
       <section className="container SProceso" id="Proceso">
         <div className="text-center">
-          <p className="pProceso">
-            El primer paso hacia la transformación tecnológica de tu empresa
-            comienza con un simple mensaje, estaremos esperando por ello...
-          </p>
+          <p className="pProceso">Nuestro Proceso de Trabajo en Tcontrol</p>
         </div>
 
         <div className="d-flex justify-content-center gap-3 mt-4 Proceso-cards">
@@ -422,14 +419,14 @@ const Inicio: React.FC = () => {
           <div className="card custom-card-Proceso">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title-Proceso text-center custom-title-Proceso">
-                Contacta
+                Consulta y Diagnóstico
               </h5>
               <br />
               <br />
 
               <p className="card-text text-center custom-text-Proceso">
-                Contamos con profesionales expertos para transformar ideas en
-                soluciones reales.
+                Recibimos sus necesidades, realizamos una evaluacion técnica y
+                definimos el alcance del proyecto.
               </p>
               <br />
               <div className="d-flex justify-content-center mt-1">
@@ -466,13 +463,13 @@ const Inicio: React.FC = () => {
           <div className="card custom-card-Proceso">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title-Proceso text-center custom-title-Proceso">
-                Analiza
+                Diseño y Planificación
               </h5>
               <br />
               <br />
               <p className="card-text text-center custom-text-Proceso">
-                Definimos, planificamos y brindamos un camino innovador para
-                impulsar tu crecimiento.
+                Desarrollamos una solución personalizada a sus necesidades con
+                ingeniería detallada y planificación eficiente.
               </p>
               <br />
               <div className="d-flex justify-content-center mt-1">
@@ -503,13 +500,13 @@ const Inicio: React.FC = () => {
           <div className="card custom-card-Proceso">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title-Proceso text-center custom-title-Proceso">
-                Desarrolla
+                Implementación, Pruebas y puesta en marcha
               </h5>
               <br />
               <br />
               <p className="card-text text-center custom-text-Proceso">
-                Creamos soluciones con IT capaces de optimizar procesos y dar
-                resultados.
+                Instalamos los sistemas de ingeniería solicitados, verificamos
+                con pruebas funcionales y aseguramos una operación correcta.
               </p>
               <br />
               <div className="d-flex justify-content-center mt-1">
@@ -545,13 +542,13 @@ const Inicio: React.FC = () => {
           <div className="card custom-card-Proceso">
             <div className="card-body d-flex flex-column">
               <h5 className="card-title-Proceso text-center custom-title-Proceso">
-                Escala
+                Soporte y Mantenimiento
               </h5>
               <br />
               <br />
               <p className="card-text text-center custom-text-Proceso">
-                Impulsamos el crecimiento de capacidades y mercados de una
-                manera sostenible.
+                Brindamos asistencia tecnica, y mantenimiento para garantizar
+                una operacion continua de sus sistemas.
               </p>
               <br />
               <div className="d-flex justify-content-center mt-1">
