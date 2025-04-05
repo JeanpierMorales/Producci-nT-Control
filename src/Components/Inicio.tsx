@@ -107,16 +107,16 @@ const Inicio: React.FC = () => {
   const specialtiesELECT = [
     //ENERGIA & POTENCIA
     {
-      title: "Electricidad Industrial",
-      image: EspecialidadesEleYPot,
-    },
-    {
       title: "Sistemas de Bombeo",
       image: EspecialidadesSisBom,
     },
     {
       title: "Diseño e instalación de Tableros Eléctricos",
       image: EspecialidadesDisTabEl,
+    },
+    {
+      title: "Electricidad Industrial",
+      image: EspecialidadesEleYPot,
     },
     {
       title: "Sistemas de Potencia & Energía",
