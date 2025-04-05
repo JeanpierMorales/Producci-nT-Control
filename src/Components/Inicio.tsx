@@ -26,6 +26,22 @@ import VideoFondo from "../Media/Video/Fondo.mp4"; // Importa el video
 import novedadesImage1 from "../Media/Image/novedades1.jpg";
 import novedadesImage2 from "../Media/Image/novedades2.jpg";
 import novedadesImage3 from "../Media/Image/novedades3.jpg";
+import IndustriaAutomatizacion from "../Media/Image/IndustriaAutomatizacion.png";
+import IndustriaSeguridad from "../Media/Image/IndustriaSeguridad.png";
+import EspecialidadInstrumentacion from "../Media/Image/Instrumentacion.png";
+import EspecialidadAuProInd from "../Media/Image/AutomatizacionProcesoIndustrial.png";
+import EspecialidadCableadoEstructurado from "../Media/Image/CableadoE.png";
+import EspecialidadRedComInd from "../Media/Image/RedComInd.png";
+import EspecialidadTeleReIn from "../Media/Image/TeleReIn.jpg";
+
+import EspecialidadesEleYPot from "../Media/Image/EspecialidadesEleYPot.png";
+import EspecialidadesSisBom from "../Media/Image/EspecialidadesSisBom.png";
+import EspecialidadesDisTabEl from "../Media/Image/EspecialidadesDisTabEl.png";
+import EspecialidadesSisPotEne from "../Media/Image/EspecialidadesSisPotEne.jpg";
+import EspecialidadesSisACI from "../Media/Image/EspecialidadesSisACI.png";
+
+import EspecialidadesVidCCTV from "../Media/Image/EspecialidadesVidCCTV.jpg";
+import EspecialidadesSisAlaInt from "../Media/Image/EspecialidadesSisAlaInt.jpg";
 
 // Footer
 import FooterLogo from "../Media/Image/T-Control.png"; // Importa la imagen
@@ -55,63 +71,83 @@ const Inicio: React.FC = () => {
       text: "Automatización y mantenimiento de plantas de procesamiento.",
     },
     {
-      img: "https://img.freepik.com/foto-gratis/trabajador-usa-panel-control-fabrica_140725-7625.jpg?t=st=1743267957~exp=1743271557~hmac=c6e9c504ff5729c6f084d18b960532f5eb9e7e1cc679566a656219ba9df2b874&w=1380",
+      img: IndustriaAutomatizacion,
       title: "Automatización y Control Industrial",
       text: "Optimización de procesos con tecnología avanzada.",
     },
     {
-      img: "https://img.freepik.com/foto-gratis/camara-vigilancia-incorporada-muro-piedra-edificio_93675-131321.jpg?t=st=1743268367~exp=1743271967~hmac=13729a25703c75528ccf50b5ad5edc5e57abddff78cd14f9f1f6f3eadf78766d&w=1380",
+      img: IndustriaSeguridad,
       title: "Seguridad Electrónica y Videovigilancia",
       text: "Protección y monitoreo inteligente.",
     },
-    {
-      img: "https://cdn.pixabay.com/photo/2024/07/14/13/46/ai-generated-8894582_1280.jpg",
-      title: "Tecnológica",
-      text: "Innovación y desarrollo tecnológico.",
-    },
+
     {
       img: "https://cdn.pixabay.com/photo/2017/10/31/13/55/desk-2905361_1280.jpg",
       title: "Industrial",
       text: "Soluciones industriales avanzadas.",
     },
-    {
-      img: "https://cdn.pixabay.com/photo/2017/07/14/11/28/hybrid-car-2503566_1280.jpg",
-      title: "Automotriz",
-      text: "Tecnología y eficiencia en la industria automotriz.",
-    },
   ];
 
   // Imagenes de Especialidades
   const specialties = [
+    // AUTOMATIZACION Y CONTROL
     {
-      title: "Internet de las Cosas (IoT)",
+      title: "Sistemas SCADA y Telemetría",
       image:
         "https://imgs.search.brave.com/bCpH0-SWojSChsIxkmXaWzNl6U5eLsEq-ztCPf_8Fgk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDk2/MjY0MTU2L2VzL2Zv/dG8vc2lzdGVtYS1k/ZS1jb250cm9sLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1q/MXYwdUpaLWlEaHNk/cmwwcXlWNlk5WFZZ/Y3hVVFM4OWxyTUY2/MGV4RkxjPQ",
     },
     {
-      title: "Seguridad Electrónica y Videovigilancia",
-      image:
-        "https://i.pinimg.com/736x/ba/88/6d/ba886d93692d803252e0e011d4a1dece.jpg",
+      title: "Instrumentación y control",
+      image: EspecialidadInstrumentacion,
     },
     {
-      title: "Sistemas SCADA y Telemetría",
-      image:
-        "https://t4.ftcdn.net/jpg/05/52/77/73/240_F_552777398_G8QVACrqTbSLblFWJxExPuv3nc4xYyyY.jpg",
+      title: "Automatización de Procesos Industriales",
+      image: EspecialidadAuProInd,
+    },
+    //INFRAESTRUCTURA & REDES
+    {
+      title: "Cableado Estructurado",
+      image: EspecialidadCableadoEstructurado,
     },
     {
-      title: "Electrónica Industrial",
-      image:
-        "https://i.pinimg.com/736x/8e/09/e2/8e09e239da850b7f1305803997874767.jpg",
+      title: "Redes de Comunicación Industrial",
+      image: EspecialidadRedComInd,
     },
     {
-      title: "Automatización Industrial",
-      image:
-        "https://img.freepik.com/foto-gratis/trabajador-fabrica-que-supervisa-maquinas-industriales-produccion-forma-remota-sala-control_342744-90.jpg?t=st=1743268613~exp=1743272213~hmac=fdd92ea81e689e21a119a85b0f6c3f0ffc699db16f6549f77409ee86b6660e9e&w=1380",
+      title: "Telecomunicaciones & Redes Inalámbricas",
+      image: EspecialidadTeleReIn,
+    },
+
+    //ENERGIA & POTENCIA
+    {
+      title: "Electricidad Industrial",
+      image: EspecialidadesEleYPot,
     },
     {
-      title: "Sistemas De Bombeo",
-      image:
-        "https://i.pinimg.com/736x/11/d7/51/11d751ec5e4a09002fcc031092d0cc53.jpg",
+      title: "Sistemas de Bombeo",
+      image: EspecialidadesSisBom,
+    },
+    {
+      title: "Diseño e instalación de Tableros Eléctricos",
+      image: EspecialidadesDisTabEl,
+    },
+    {
+      title: "Sistemas de Potencia & Energía",
+      image: EspecialidadesSisPotEne,
+    },
+    {
+      title: "Sistemas ACI y DACI ",
+      image: EspecialidadesSisACI,
+    },
+
+    //SEGURIDAD ELECTRONICA */
+    {
+      title: "Videovigilancia CCTV",
+      image: EspecialidadesVidCCTV,
+    },
+    {
+      title: "Sistemas de Alarmas y Seguridad Inteligente",
+      image: EspecialidadesSisAlaInt,
     },
   ];
 
@@ -299,12 +335,10 @@ const Inicio: React.FC = () => {
         {/* Título de la sección */}
         <h2 className="industria3-title">Industrias</h2>
         <br />
-        <br />
         {/* Subtítulo de la sección */}
         <p className="industria3-subtitle">
-          Nos enorgullece ofrecer soluciones de vanguardia que transforman la
-          manera en que las empresas operan y optimizan sus procesos, impulsando
-          la eficiencia, la productividad y la seguridad.
+          Brindamos soluciones especializadas para diversas industrias clave en
+          el Perú.
         </p>
         <br />
 
@@ -422,7 +456,6 @@ const Inicio: React.FC = () => {
                 Consulta y Diagnóstico
               </h5>
               <br />
-              <br />
 
               <p className="card-text text-center custom-text-Proceso">
                 Recibimos sus necesidades, realizamos una evaluacion técnica y
@@ -435,6 +468,7 @@ const Inicio: React.FC = () => {
                 </a>
                 <br />
               </div>
+              <br />
               {/* SVG en la parte inferior central de la tarjeta */}
               <div className="svg-icon-container">
                 <svg
@@ -465,7 +499,6 @@ const Inicio: React.FC = () => {
               <h5 className="card-title-Proceso text-center custom-title-Proceso">
                 Diseño y Planificación
               </h5>
-              <br />
               <br />
               <p className="card-text text-center custom-text-Proceso">
                 Desarrollamos una solución personalizada a sus necesidades con
@@ -503,17 +536,16 @@ const Inicio: React.FC = () => {
                 Implementación, Pruebas y puesta en marcha
               </h5>
               <br />
-              <br />
               <p className="card-text text-center custom-text-Proceso">
                 Instalamos los sistemas de ingeniería solicitados, verificamos
                 con pruebas funcionales y aseguramos una operación correcta.
               </p>
-              <br />
               <div className="d-flex justify-content-center mt-1">
                 <a href="#Datos" className="btn custom-btn-proceso">
                   Vamos
                 </a>
               </div>
+              <br />
               {/* SVG en la parte inferior central de la tarjeta */}
               <div className="svg-icon-container">
                 <svg
