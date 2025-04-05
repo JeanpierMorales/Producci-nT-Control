@@ -1,5 +1,5 @@
 .my-5 {
-  margin-top: 7rem !important;
+  margin-top: 3rem !important;
   margin-bottom: 0rem !important;
 }
 .tituloEspecialidades {
@@ -108,4 +108,10 @@
     max-width: 1000px;
     padding: 0rem 3rem;
   }
+}
+.vigilancia {
+  justify-content: space-evenly;
+}
+.potencia {
+  justify-content: center;
 }

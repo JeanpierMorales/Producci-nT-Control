@@ -89,21 +89,7 @@ const Inicio: React.FC = () => {
   ];
 
   // Imagenes de Especialidades
-  const specialties = [
-    // AUTOMATIZACION Y CONTROL
-    {
-      title: "Sistemas SCADA y Telemetría",
-      image:
-        "https://imgs.search.brave.com/bCpH0-SWojSChsIxkmXaWzNl6U5eLsEq-ztCPf_8Fgk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDk2/MjY0MTU2L2VzL2Zv/dG8vc2lzdGVtYS1k/ZS1jb250cm9sLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1q/MXYwdUpaLWlEaHNk/cmwwcXlWNlk5WFZZ/Y3hVVFM4OWxyTUY2/MGV4RkxjPQ",
-    },
-    {
-      title: "Instrumentación y control",
-      image: EspecialidadInstrumentacion,
-    },
-    {
-      title: "Automatización de Procesos Industriales",
-      image: EspecialidadAuProInd,
-    },
+  const specialtiesIYR = [
     //INFRAESTRUCTURA & REDES
     {
       title: "Cableado Estructurado",
@@ -117,7 +103,8 @@ const Inicio: React.FC = () => {
       title: "Telecomunicaciones & Redes Inalámbricas",
       image: EspecialidadTeleReIn,
     },
-
+  ];
+  const specialtiesELECT = [
     //ENERGIA & POTENCIA
     {
       title: "Electricidad Industrial",
@@ -139,7 +126,9 @@ const Inicio: React.FC = () => {
       title: "Sistemas ACI y DACI ",
       image: EspecialidadesSisACI,
     },
+  ];
 
+  const specialtiesVID = [
     //SEGURIDAD ELECTRONICA */
     {
       title: "Videovigilancia CCTV",
@@ -148,6 +137,23 @@ const Inicio: React.FC = () => {
     {
       title: "Sistemas de Alarmas y Seguridad Inteligente",
       image: EspecialidadesSisAlaInt,
+    },
+  ];
+
+  const specialties = [
+    // AUTOMATIZACION Y CONTROL
+    {
+      title: "Sistemas SCADA y Telemetría",
+      image:
+        "https://imgs.search.brave.com/bCpH0-SWojSChsIxkmXaWzNl6U5eLsEq-ztCPf_8Fgk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDk2/MjY0MTU2L2VzL2Zv/dG8vc2lzdGVtYS1k/ZS1jb250cm9sLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1q/MXYwdUpaLWlEaHNk/cmwwcXlWNlk5WFZZ/Y3hVVFM4OWxyTUY2/MGV4RkxjPQ",
+    },
+    {
+      title: "Instrumentación y control",
+      image: EspecialidadInstrumentacion,
+    },
+    {
+      title: "Automatización de Procesos Industriales",
+      image: EspecialidadAuProInd,
     },
   ];
 
@@ -421,10 +427,87 @@ const Inicio: React.FC = () => {
       <section className="container my-5" id="Especialidades">
         <h2 className="text-center mb-4 tituloEspecialidades">
           Especialidades
-        </h2>
+        </h2>{" "}
+        <br />
+        <h3 className="text-center">Automatización y Control</h3>
         <br />
         <div className="row">
           {specialties.map((item, index) => (
+            <div className="col-12 col-sm-6 col-md-4 mb-4" key={index}>
+              <div className="especialidades-card-unique">
+                <div
+                  className="especialidades-card-image-unique"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                >
+                  {/* Capa oscura para resaltar el texto */}
+                  <div className="overlay-dark-unique"></div>
+                  <h3 className="especialidades-card-title-unique">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* Infraestructura y redes */}
+
+      <section className="container my-5" id="Especialidades">
+        <h3 className="text-center">Infraestructura y Redes</h3>
+        <br />
+        <br />
+        <div className="row">
+          {specialtiesIYR.map((item, index) => (
+            <div className="col-12 col-sm-6 col-md-4 mb-4" key={index}>
+              <div className="especialidades-card-unique">
+                <div
+                  className="especialidades-card-image-unique"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                >
+                  {/* Capa oscura para resaltar el texto */}
+                  <div className="overlay-dark-unique"></div>
+                  <h3 className="especialidades-card-title-unique">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* Energía y potencia */}
+
+      <section className="container my-5" id="Especialidades">
+        <h3 className="text-center">Energía y Potencia</h3>
+        <br />
+        <br />
+        <div className="row potencia">
+          {specialtiesELECT.map((item, index) => (
+            <div className="col-12 col-sm-6 col-md-4 mb-4" key={index}>
+              <div className="especialidades-card-unique">
+                <div
+                  className="especialidades-card-image-unique"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                >
+                  {/* Capa oscura para resaltar el texto */}
+                  <div className="overlay-dark-unique"></div>
+                  <h3 className="especialidades-card-title-unique">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* Seguridad Electronica */}
+
+      <section className="container my-5" id="Especialidades">
+        <h3 className="text-center">Seguridad Electronica</h3>
+        <br />
+        <br />
+        <div className="row vigilancia">
+          {specialtiesVID.map((item, index) => (
             <div className="col-12 col-sm-6 col-md-4 mb-4" key={index}>
               <div className="especialidades-card-unique">
                 <div

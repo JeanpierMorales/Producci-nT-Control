@@ -32,6 +32,7 @@ body {
 }
 
 /* Aplica filtro en escala de grises al iframe del mapa */
+/* Estilos para personalizar el color del mapa */
 .ubicanos-map-container iframe {
   position: absolute;
   top: 0;
@@ -39,7 +40,22 @@ body {
   width: 100%;
   height: 100%;
   border: 0;
-  filter: grayscale(100%) contrast(1);
+
+  /* Opciones para manejar el color del mapa */
+  /* Opción 1: Escala de grises */
+  /* filter: grayscale(1); */
+
+  /* Opción 2: Aumentar contraste */
+  /* filter: contrast(1.5); */
+
+  /* Opción 3: Reducir saturación */
+  /* filter: saturate(0.5); */
+
+  /* Opción 4: Combinación personalizada */
+  /* filter: contrast(1.2) saturate(0.2); */
+  /* Ajuste predeterminado */
+
+  filter: grayscale(0.5);
 }
 
 /* Información de contacto */
@@ -196,7 +212,7 @@ body {
 /* Botón Enviar */
 .datos-btn {
   font-size: 16px;
-  color: #fff;
+  color: #222;
   background-color: transparent; /* Sin fondo */
   border: 1px solid #222; /* Borde de 1px color #222 */
   border-radius: 0; /* Sin bordes redondeados */
@@ -286,10 +302,9 @@ body {
   min-height: calc(1.5em + 0.75rem + calc(var(--bs-border-width) * 2));
   border-radius: 20px; /* Borde redondeado de 20px */
 }
-/* Botón de Enviar: sin box-shadow y con borde de 1px #222 */
 .datos-btn {
   font-size: 16px;
-  color: #fff;
+  color: #222;
   background-color: transparent;
   border: 1px solid #222; /* Borde de 1px color #222 */
   border-radius: 0;
@@ -310,7 +325,6 @@ body {
   display: block;
 }
 
-/* Textarea para el mensaje con border-radius de 20px */
 .datos-textarea {
   width: 100%;
   border-radius: 20px !important;
@@ -320,7 +334,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Cuando la ventana sea menor a 576px, agregar indicación en el botón de mensaje */
 @media (max-width: 576px) {
   .message-btn::after {
     content: "Enviar consulta";
