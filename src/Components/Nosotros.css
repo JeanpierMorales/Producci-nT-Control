@@ -164,13 +164,13 @@
 
 /* Imágenes específicas para cada card */
 .mision {
-  background-image: url("https://i.pinimg.com/736x/e8/2e/d0/e82ed0a803cbc6fc21db7f4897e17203.jpg");
+  background-image: url("../Media/Image/MIsion.jpg");
 }
 .vision {
   background-image: url("../Media/Image/Mision.png"); /* Cambia la ruta a una carpeta local */
 }
 .valores {
-  background-image: url("https://i.pinimg.com/736x/42/3f/ba/423fba557438587bf43ee85c973e0739.jpg");
+  background-image: url("../Media/Image/valores.jpg");
 }
 
 /* Responsividad */

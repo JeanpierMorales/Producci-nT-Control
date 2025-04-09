@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Importar los css
 import "./Inicio.css";
@@ -20,12 +20,13 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // Incio
 import Logo from "../Media/Image/Tinici.png"; // Importa la imagen del logo
-import VideoFondo from "../Media/Video/Fondo.mp4"; // Importa el video
 
 // Novedades
 import novedadesImage1 from "../Media/Image/novedades1.jpg";
 import novedadesImage2 from "../Media/Image/novedades2.jpg";
-import novedadesImage3 from "../Media/Image/novedades3.jpg";
+import novedadesImage3 from "../Media/Image/novedades3.png";
+import novedadesImage4 from "../Media/Image/novedades4.png";
+
 import IndustriaAutomatizacion from "../Media/Image/IndustriaAutomatizacion.png";
 import IndustriaSeguridad from "../Media/Image/IndustriaSeguridad.png";
 import EspecialidadInstrumentacion from "../Media/Image/Instrumentacion.png";
@@ -47,6 +48,58 @@ import EspecialidadesSisAlaInt from "../Media/Image/EspecialidadesSisAlaInt.jpg"
 import FooterLogo from "../Media/Image/T-Control.png"; // Importa la imagen
 
 const Inicio: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [language, setLanguage] = useState<"es" | "en">("es"); // Estado para el idioma
+
+  const images = [
+    IndustriaAutomatizacion,
+    EspecialidadAuProInd,
+    EspecialidadesSisPotEne,
+    EspecialidadTeleReIn,
+  ];
+
+  const translations = {
+    es: {
+      welcome: "Bienvenido a",
+      description:
+        "Desarrollamos soluciones inteligentes para hacer que los sistemas industriales sean más eficientes, seguros y conectados",
+      services: "Servicios",
+      us: "Nosotros",
+      industries: "Industrias",
+      specialties: "Especialidades",
+      contact: "Conecta!",
+      about: "Sobre nosotros",
+      mission: "Misión",
+      vision: "Visión",
+      values: "Nuestros Valores",
+    },
+    en: {
+      welcome: "Welcome to",
+      description:
+        "We develop smart solutions to make industrial systems more efficient, secure, and connected",
+      services: "Services",
+      us: "About Us",
+      industries: "Industries",
+      specialties: "Specialties",
+      contact: "Connect!",
+      about: "About Us",
+      mission: "Mission",
+      vision: "Vision",
+      values: "Our Values",
+    },
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Cambia cada 5 segundos
+    return () => clearInterval(interval); // Limpia el intervalo al desmontar
+  }, [images.length]);
+
+  const toggleLanguage = () => {
+    setLanguage((prevLanguage) => (prevLanguage === "es" ? "en" : "es"));
+  };
+
   //  Industrias Tres
 
   const slides = [
@@ -160,22 +213,22 @@ const Inicio: React.FC = () => {
   // Novedades
   const novedadesData = [
     {
-      //fecha: "1 de Marzo, 2023",
       titulo:
-        "Desarrollo de nuevos modelos en la industria de los Sistemas de Bombeo",
-      img: novedadesImage1, // Reemplaza con tu imagen
+        "Suministro y montaje de equipos electromecánicos - Pivotes de Riego",
+      img: novedadesImage1,
     },
     {
-      //fecha: "18 de Julio, 2022",
-      titulo:
-        "Solución Avanzada de Seguridad Electrónica para Centros Logísticos",
+      titulo: "Suministro, montaje y puesta en marcha de sistemas de bombeo",
       img: novedadesImage2,
     },
     {
-      //fecha: "7 de Abril, 2020",
+      titulo: "Sistemas hidrotérmico para la producción de mango (importación)",
+      img: novedadesImage3,
+    },
+    {
       titulo:
-        "Tablero general 3F+T, 60HZ con vista Lateral, Frontal y Frontal interior",
-      img: novedadesImage3, // Usa la imagen importada
+        "Diseño, ensamblaje e instalación de tableros eléctricos y de control",
+      img: novedadesImage4,
     },
   ];
 
@@ -187,7 +240,7 @@ const Inicio: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const mailtoLink = `mailto:omarsm.1928@gmail.com?subject=Consulta%20desde%20la%20web&body=Mensaje:%20${encodeURIComponent(
+    const mailtoLink = `mailto:tcontrolsac@gmail.com?subject=Consulta%20desde%20la%20web&body=Mensaje:%20${encodeURIComponent(
       mensaje
     )}%0ACorreo:%20${encodeURIComponent(correo)}`;
     window.location.href = mailtoLink;
@@ -197,11 +250,15 @@ const Inicio: React.FC = () => {
     // CONTENEDOR DE INICIO ---------------------------------------------------------------------------------------------------------------
     <div className="App">
       <div className="inicio-container Inicio">
-        {/* Video de fondo */}
-        <video autoPlay muted loop id="bg-video">
-          <source src={VideoFondo} type="video/mp4" />
-          Tu navegador no soporta video HTML5.
-        </video>
+        {/* Fondo dinámico con imágenes */}
+        <div
+          className="carousel-background"
+          style={{
+            backgroundImage: `url(${images[currentImageIndex]})`,
+          }}
+        >
+          <div className="overlay"></div> {/* Overlay oscuro */}
+        </div>
 
         {/* Barra de Navegación */}
         <nav className="navbar navbar-expand-lg navbar-transparent barraNav">
@@ -232,17 +289,17 @@ const Inicio: React.FC = () => {
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <a className="nav-link OpcionMenu a" href="#Nosotros">
-                    Nosotros
+                    {translations[language].us}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link OpcionMenu c" href="#Industria">
-                    Industrias
+                    {translations[language].industries}
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link OpcionMenu b" href="#Especialidades">
-                    Especialidades
+                    {translations[language].specialties}
                   </a>
                 </li>
                 <li className="nav-item">
@@ -252,10 +309,14 @@ const Inicio: React.FC = () => {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link OpcionMenu e" href="#Contactanos">
-                    Conecta!
+                    {translations[language].contact}
                   </a>
                 </li>
               </ul>
+              {/* Botón para cambiar idioma */}
+              <button className="btn btn-language" onClick={toggleLanguage}>
+                {language === "es" ? "EN" : "ES"}
+              </button>
             </div>
           </div>
         </nav>
@@ -263,17 +324,15 @@ const Inicio: React.FC = () => {
         {/* Contenido principal */}
         <div className="contenido-inicio">
           <h1 className="tituloInicio">
-            Bienvenido a <span className="marca">T-Control</span>
+            {translations[language].welcome}{" "}
+            <span className="marca">T-Control</span>
           </h1>
-          <p className="ContInicio">
-            Desarrollamos soluciones inteligentes para hacer que los sistemas
-            industriales sean más eficientes, seguros y conectados
-          </p>
+          <p className="ContInicio">{translations[language].description}</p>
           <button
             className="btn BServicios"
             onClick={() => (window.location.href = "#Especialidades")}
           >
-            Servicios
+            {translations[language].services}
           </button>
         </div>
       </div>
@@ -539,6 +598,7 @@ const Inicio: React.FC = () => {
                 Consulta y Diagnóstico
               </h5>
               <br />
+              <br />
 
               <p className="card-text text-center custom-text-Proceso">
                 Recibimos sus necesidades, realizamos una evaluacion técnica y
@@ -551,7 +611,6 @@ const Inicio: React.FC = () => {
                 </a>
                 <br />
               </div>
-              <br />
               {/* SVG en la parte inferior central de la tarjeta */}
               <div className="svg-icon-container">
                 <svg
@@ -583,18 +642,20 @@ const Inicio: React.FC = () => {
                 Diseño y Planificación
               </h5>
               <br />
+              <br />
               <p className="card-text text-center custom-text-Proceso">
                 Desarrollamos una solución personalizada a sus necesidades con
                 ingeniería detallada y planificación eficiente.
               </p>
               <br />
+              <br />
               <div className="d-flex justify-content-center mt-1">
                 <a href="#Datos" className="btn custom-btn-proceso">
                   Vamos
                 </a>
-              </div>
-              {/* SVG en la parte inferior central de la tarjeta */}
+              </div>{" "}
               <br />
+              {/* SVG en la parte inferior central de la tarjeta */}
               <div className="svg-icon-container">
                 <svg
                   className="svg-icon"
@@ -628,8 +689,8 @@ const Inicio: React.FC = () => {
               </h5>
               <br />
               <p className="card-text text-center custom-text-Proceso">
-                Instalamos los sistemas de ingeniería solicitados, verificamos
-                con pruebas funcionales y aseguramos una operación correcta.
+                Instalamos sistemas de ingeniería solicitados, verificamos con
+                pruebas funcionales y aseguramos una operación correcta.
               </p>
               <div className="d-flex justify-content-center mt-1">
                 <a href="#Datos" className="btn custom-btn-proceso">
@@ -641,21 +702,31 @@ const Inicio: React.FC = () => {
               <div className="svg-icon-container">
                 <svg
                   className="svg-icon"
-                  viewBox="0 0 512 512"
+                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M486.918 241c-3.569-56.163-27.148-108.469-67.298-148.62C379.469 52.23 327.163 28.651 271 25.082V0h-30v25.082C184.837 28.651 132.531 52.23 92.38 92.38 52.23 132.531 28.651 184.837 25.082 241H0v30h25.082c3.569 56.163 27.148 108.469 67.298 148.62 40.151 40.15 92.457 63.729 148.62 67.298V512h30v-25.082c56.163-3.57 108.469-27.148 148.62-67.298 40.15-40.151 63.729-92.457 67.298-148.62H512v-30zM241 55.16v39.551C163.63 101.848 101.848 163.63 94.711 241H55.16C62.492 141.882 141.882 62.492 241 55.16zm0 401.68C141.882 449.508 62.492 370.118 55.16 271h39.551C101.848 348.37 163.63 410.152 241 417.289zm15-68.861c-72.773 0-131.979-59.205-131.979-131.979S183.227 124.021 256 124.021 387.979 183.227 387.979 256 328.773 387.979 256 387.979zm15 68.861v-39.551C348.37 410.152 410.152 348.37 417.289 271h39.551c-7.332 99.118-86.722 178.508-185.84 185.84zM417.289 241C410.152 163.63 348.37 101.848 271 94.711V55.16c99.118 7.332 178.508 86.722 185.84 185.84z"
-                    fill="#222222"
-                    opacity="1"
-                    data-original="#000000"
-                  ></path>
-                  <path
-                    d="M256 156.617c-54.8 0-99.383 44.583-99.383 99.383S201.2 355.383 256 355.383 355.383 310.8 355.383 256 310.8 156.617 256 156.617zm-6.735 142.08-40.105-40.105 21.213-21.213 18.893 18.893 32.363-32.362 21.213 21.213z"
-                    fill="#222222"
-                    opacity="1"
-                    data-original="#000000"
-                  ></path>
+                  <g>
+                    <circle
+                      cx="7.203"
+                      cy="16.5"
+                      r="1.886"
+                      fill="#222222"
+                      opacity="1"
+                      data-original="#000000"
+                    ></circle>
+                    <path
+                      d="M15.141 6.014c1.786 0 3.236 1.45 3.236 3.236s-1.45 3.236-3.236 3.236-3.236-1.45-3.236-3.236 1.45-3.236 3.236-3.236zm0 1.5a1.737 1.737 0 0 0 0 3.472 1.737 1.737 0 0 0 0-3.472zM8.955 10.815l.473 1.141c.207.101.407.217.598.345l1.225-.16a.748.748 0 0 1 .662.25 6.255 6.255 0 0 1 1.204 2.085.748.748 0 0 1-.115.698l-.751.981c.016.23.016.461 0 .689l.751.982a.748.748 0 0 1 .115.698 6.255 6.255 0 0 1-1.204 2.085.748.748 0 0 1-.662.25l-1.225-.16a5.137 5.137 0 0 1-.597.345l-.474 1.141a.748.748 0 0 1-.548.448 6.248 6.248 0 0 1-2.407 0 .748.748 0 0 1-.548-.448l-.473-1.141a5.068 5.068 0 0 1-.598-.345l-1.225.16a.748.748 0 0 1-.662-.25 6.255 6.255 0 0 1-1.204-2.085.748.748 0 0 1 .115-.698l.751-.981a4.951 4.951 0 0 1 0-.689l-.751-.982a.748.748 0 0 1-.115-.698 6.255 6.255 0 0 1 1.204-2.085.748.748 0 0 1 .662-.25l1.225.16c.191-.128.391-.244.597-.345l.474-1.141A.748.748 0 0 1 6 10.367a6.248 6.248 0 0 1 2.407 0 .748.748 0 0 1 .548.448zm-1.224.964a4.771 4.771 0 0 0-1.055 0l-.426 1.026a.755.755 0 0 1-.406.406 3.526 3.526 0 0 0-.809.467.754.754 0 0 1-.554.149l-1.102-.144c-.209.284-.386.59-.528.914l.676.882a.748.748 0 0 1 .148.554c-.041.31-.041.624 0 .934a.748.748 0 0 1-.148.554s-.676.882-.675.883c.141.323.318.629.527.913l1.102-.144a.754.754 0 0 1 .554.149c.248.191.52.348.809.467a.755.755 0 0 1 .406.406l.426 1.026c.351.039.704.039 1.055 0l.426-1.026a.751.751 0 0 1 .406-.406c.289-.119.561-.276.809-.467a.754.754 0 0 1 .554-.149l1.102.144c.209-.284.386-.59.527-.914l-.675-.882a.748.748 0 0 1-.148-.554c.041-.31.041-.624 0-.934a.748.748 0 0 1 .148-.554l.675-.883a4.74 4.74 0 0 0-.527-.913l-1.102.144a.754.754 0 0 1-.554-.149 3.526 3.526 0 0 0-.809-.467.751.751 0 0 1-.406-.406z"
+                      fill="#222222"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M14.985 17.248a.75.75 0 0 1 .03-1.499c.33.006.66-.013.989-.057l.614-1.48a.753.753 0 0 1 .407-.406c.4-.165.777-.383 1.12-.646a.745.745 0 0 1 .554-.149l1.59.207c.353-.457.643-.96.863-1.494l-.975-1.273a.75.75 0 0 1-.148-.554 4.917 4.917 0 0 0 0-1.294.75.75 0 0 1 .148-.554l.974-1.273a6.446 6.446 0 0 0-.862-1.494l-1.59.207a.745.745 0 0 1-.554-.149 4.936 4.936 0 0 0-1.12-.646.753.753 0 0 1-.407-.406l-.615-1.481a6.512 6.512 0 0 0-1.725.001l-.615 1.48a.748.748 0 0 1-.406.406c-.4.165-.777.383-1.12.646a.745.745 0 0 1-.554.149l-1.59-.207c-.353.457-.643.96-.863 1.494l.975 1.273a.75.75 0 0 1-1.191.912L7.686 7.358a.753.753 0 0 1-.114-.699 8.007 8.007 0 0 1 1.54-2.668.753.753 0 0 1 .663-.251l1.705.224c.289-.201.595-.377.913-.528l.659-1.588a.75.75 0 0 1 .549-.448 7.98 7.98 0 0 1 3.08 0 .748.748 0 0 1 .548.448l.659 1.588c.319.151.624.327.914.527l1.705-.223a.751.751 0 0 1 .662.251 7.993 7.993 0 0 1 1.541 2.668.75.75 0 0 1-.115.699L21.55 8.722c.029.351.029.704 0 1.055l1.045 1.365a.75.75 0 0 1 .115.699 7.993 7.993 0 0 1-1.541 2.668.751.751 0 0 1-.662.251l-1.705-.224a6.426 6.426 0 0 1-.913.528l-.66 1.588a.748.748 0 0 1-.548.448c-.56.11-1.128.16-1.696.148z"
+                      fill="#222222"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                  </g>
                 </svg>
               </div>
             </div>
@@ -673,7 +744,6 @@ const Inicio: React.FC = () => {
                 Brindamos asistencia tecnica, y mantenimiento para garantizar
                 una operacion continua de sus sistemas.
               </p>
-              <br />
               <div className="d-flex justify-content-center mt-1">
                 <a href="#Datos" className="btn custom-btn-proceso">
                   Vamos
@@ -686,18 +756,14 @@ const Inicio: React.FC = () => {
                   viewBox="0 0 64 64"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M8.67 40.17 36 24.47l.91 1.59a1 1 0 0 0 1.83-.24l1-3.86a1 1 0 0 0-.7-1.23l-3.86-1a1 1 0 0 0-1.13 1.46l.95 1.55-27.33 15.7Z"
-                    fill="#222222"
-                    opacity="1"
-                    data-original="#000000"
-                  ></path>
-                  <path
-                    d="M60 24h-6V4a1 1 0 0 0-1.47-.88l-13 7a1 1 0 0 0 0 1.78L52 17.79V24h-6a1 1 0 0 0-1 1v9H32a1 1 0 0 0-1 1v8H18a1 1 0 0 0-1 1v6H4a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h56a1 1 0 0 0 1-1V25a1 1 0 0 0-1-1ZM42.22 10.94 52 5.67v9.9ZM59 59H5v-7h13a1 1 0 0 0 1-1v-6h13a1 1 0 0 0 1-1v-8h13a1 1 0 0 0 1-1v-9h12Z"
-                    fill="#222222"
-                    opacity="1"
-                    data-original="#000000"
-                  ></path>
+                  <g>
+                    <path
+                      d="M62 29v6a3.003 3.003 0 0 1-3 3h-4.276a23.242 23.242 0 0 1-2.413 5.818l3.027 3.036a3.005 3.005 0 0 1-.001 4.233l-4.25 4.25a3.063 3.063 0 0 1-4.234 0l-3.035-3.026A23.242 23.242 0 0 1 38 54.724V59a3.003 3.003 0 0 1-3 3h-6a3.003 3.003 0 0 1-3-3v-4.276a23.557 23.557 0 0 1-3.619-1.282 1.007 1.007 0 0 1-.299-1.618l4.25-4.26a1.001 1.001 0 0 1 .995-.252A16.275 16.275 0 0 0 32 48a16 16 0 1 0-16-16 16.252 16.252 0 0 0 .688 4.664.999.999 0 0 1-.251.993l-4.26 4.26a1.006 1.006 0 0 1-1.62-.298A23.643 23.643 0 0 1 9.276 38H5a3.003 3.003 0 0 1-3-3v-6a3.003 3.003 0 0 1 3-3h4.276a23.253 23.253 0 0 1 2.413-5.819l-3.027-3.035a3.005 3.005 0 0 1 .001-4.233l4.25-4.25a3.063 3.063 0 0 1 4.234 0l3.035 3.026A23.242 23.242 0 0 1 26 9.276V5a3.003 3.003 0 0 1 3-3h6a3.003 3.003 0 0 1 3 3v4.276a23.242 23.242 0 0 1 5.818 2.413l3.036-3.027a3.063 3.063 0 0 1 4.233.001l4.25 4.25a3.005 3.005 0 0 1 0 4.234l-3.026 3.034A23.253 23.253 0 0 1 54.724 26H59a3.003 3.003 0 0 1 3 3Zm-18.609-2.104a1.007 1.007 0 0 0-1.655-.39l-4.55 4.552-3.183-1.061-1.06-3.183 4.55-4.55a1.007 1.007 0 0 0-.389-1.655 9.985 9.985 0 0 0-12.837 12.053L3.552 53.377a5 5 0 1 0 7.071 7.07l20.715-20.714A9.985 9.985 0 0 0 43.39 26.896Z"
+                      fill="#222222"
+                      opacity="1"
+                      data-original="#000000"
+                    ></path>
+                  </g>
                 </svg>
               </div>
             </div>
@@ -1055,18 +1121,19 @@ const Inicio: React.FC = () => {
             <h3>Especialidades</h3>
             <ul>
               {[
-                "Electricidad Industrial",
-                "Automatización Industrial",
-                "Control de Procesos",
-                "Sistemas SCADA",
-                "Cableado Estructurado",
+                "SCADA y Telemetría",
                 "Instrumentación y Control",
-                "Mantenimiento industrial",
-                "Alarmas de seguridad",
-                "Internet de las Cosas (IoT)",
-                "Automatización de Edificios",
-                "Integración de Sistemas Tecnológicos",
+                "Automatización de Procesos Industriales",
+                "Cableado Estructurado",
+                "Redes de Comunicación Industrial",
+                "Telecomunicaciones & Redes Inalámbricas",
+                "Electricidad Industrial",
                 "Sistemas de Bombeo",
+                "Diseño e instalación de Tableros Eléctricos",
+                "Sistemas de Potencia & Energía",
+                "Sistemas ACI y DACI",
+                "Videovigilancia CCTV",
+                "Sistemas de Alarmas y Seguridad Inteligente",
               ].map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
@@ -1090,15 +1157,18 @@ const Inicio: React.FC = () => {
           </div>
 
           <div className="footer-section about">
-            <h3>Sobre nosotros</h3>
+            <h3>{translations[language].about}</h3>
             <ul>
-              {["Misión", "Visión", "Nuestros Valores"].map((item, index) => (
+              {[
+                translations[language].mission,
+                translations[language].vision,
+                translations[language].values,
+              ].map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
           </div>
         </div>
-
         <div className="footer-bottom">
           <p className="tControl2025">
             © 2025 T-Control. Todos los derechos reservados.

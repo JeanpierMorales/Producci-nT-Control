@@ -105,7 +105,6 @@
   .container,
   .container-md,
   .container-sm {
-    max-width: 1000px;
     padding: 0rem 3rem;
   }
 }

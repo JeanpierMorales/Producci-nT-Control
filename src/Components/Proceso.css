@@ -17,7 +17,7 @@
 
 .custom-card-Proceso {
   margin-top: 2rem;
-  width: 15rem;
+  width: 16rem;
   height: 30rem;
   border-radius: 20px;
   box-shadow: 0 4px 6px #929292;
@@ -122,6 +122,12 @@
     font-size: 0.9rem;
   }
 }
+.message-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* animation: pulse 1.2s infinite; */
+}
 
 /* Para pantallas menores a 1000px: dos cards por fila, sin párrafo y con dimensiones ajustadas */
 @media (max-width: 1000px) {
@@ -223,5 +229,81 @@
 
   .card-text {
     font-size: 0.7rem;
+  }
+  .message-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 47px;
+    /* border-radius: 50%; */
+    background-color: #222;
+    color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: none;
+  }
+  .message-btn {
+    animation: none; /* Detener la animación */
+  }
+}
+
+/* Títulos en pantallas grandes (por defecto) */
+.card-title-Proceso {
+  font-size: 21px; /* Tamaño inicial */
+}
+
+/* Pantallas medianas (menos de 1200px) */
+@media (max-width: 1200px) {
+  .card-title-Proceso {
+    font-size: 18px; /* Reducir ligeramente */
+  }
+}
+
+/* Pantallas pequeñas (menos de 992px) */
+@media (max-width: 992px) {
+  .card-title-Proceso {
+    font-size: 16px; /* Reducir más */
+  }
+}
+
+/* Pantallas muy pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  .card-title-Proceso {
+    font-size: 20px; /* Reducir aún más */
+  }
+}
+
+/* Pantallas extra pequeñas (menos de 576px) */
+@media (max-width: 576px) {
+  .card-title-Proceso {
+    font-size: 20px; /* Tamaño mínimo */
+  }
+  .message-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 47px;
+    /* border-radius: 50%; */
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: none;
+  }
+  .message-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* animation: pulse 1.2s infinite; */
   }
 }

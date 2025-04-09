@@ -44,6 +44,34 @@
   z-index: -2;
 }
 
+/* Fondo dinámico del carrusel */
+.carousel-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  transition: background-image 1s ease-in-out; /* Transición suave entre imágenes */
+}
+
+/* Overlay oscuro */
+.carousel-background .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.65
+  ); /* Oscurece el fondo con 50% de opacidad */
+  z-index: -1; /* Debajo del contenido pero encima de la imagen */
+}
+
 /* Overlay para oscurecer el video de fondo (si se usa) */
 #bg-overlay {
   position: absolute;
@@ -174,6 +202,23 @@
 .BServicios:hover {
   background-color: #3da7ab;
   color: #fff;
+}
+
+/* Botón para cambiar idioma */
+.btn-language {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-language:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 /* Ajustes Responsive para pantallas medianas (menos de 994px) */

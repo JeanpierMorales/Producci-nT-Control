@@ -78,13 +78,6 @@ body {
   font-weight: 700;
 }
 
-.Tub {
-  font-size: 16px;
-  color: #222;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
 /* Íconos sociales */
 .ubicanos-social-icons a {
   color: #333;
@@ -103,6 +96,17 @@ body {
   border: none;
   margin-left: 10px;
   cursor: pointer;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 /* ============================= */
@@ -346,5 +350,8 @@ body {
     font-size: 0.7rem;
     border-radius: 40px;
     white-space: nowrap;
+  }
+  .message-btn {
+    background: transparent;
   }
 }

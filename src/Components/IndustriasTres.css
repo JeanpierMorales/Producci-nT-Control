@@ -37,8 +37,8 @@
 /* Carrusel: se define altura, bordes y bordes redondeados */
 .industria3-carousel {
   margin: 0 auto;
-  max-width: 800px;
-  height: 400px; /* Altura fija para el carrusel */
+  max-width: 900px;
+  height: 450px; /* Altura fija para el carrusel */
   position: relative;
   overflow: hidden;
   border-radius: 20px;
@@ -46,7 +46,7 @@
 
 /* Cada item del carrusel debe ocupar la altura definida */
 .industria3-carousel-item {
-  height: 400px;
+  height: 450px;
   position: relative;
 }
 
